@@ -50,17 +50,13 @@
                                 <span class="share-message__text">PAYLAŞ:</span>
                             </div>
                             <div class="share-items">
-                                <div class="share-item" onclick="openPopup(event, 'facebook')">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://pubg-holiday.com%2F&amp;src=sdkpreparse" target="_blank">
-                                        <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
-                                        <span class="share-item__text">Facebook</span>
-                                    </a>
+                                <div class="share-item js-facebook-share">
+                                    <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
+                                    <span class="share-item__text">Facebook</span>
                                 </div>
-                                <div class="share-item" onclick="openPopup(event, 'twitter')">
-                                    <a href="https://twitter.com/intent/tweet?text=PUBG%20Cumhuriyet%20Bayram%C4%B1%21" target="_blank">
-                                        <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
-                                        <span class="share-item__text">Twitter</span>
-                                    </a>
+                                <div class="share-item js-twitter-share">
+                                    <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
+                                    <span class="share-item__text">Twitter</span>
                                 </div>
                             </div>
                         </div>
@@ -157,11 +153,11 @@
                                 <span class="share-message__text">PAYLAŞ,<span class="br"> HEDİYELERİ KAP</span></span>
                             </div>
                             <div class="share-items">
-                                <div class="share-item" onclick="openPopup(event, 'facebook')">
+                                <div class="share-item js-facebook-share" onclick="openPopup(event, 'facebook')">
                                     <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
                                     <span class="share-item__text">Facebook</span>
                                 </div>
-                                <div class="share-item" onclick="openPopup(event, 'twitter')">
+                                <div class="share-item js-twitter-share" onclick="openPopup(event, 'twitter')">
                                     <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
                                     <span class="share-item__text">Twitter</span>
                                 </div>
@@ -656,6 +652,25 @@
             holidayLikeButton.prop('disabled', true);
         });
 
+        $('.js-facebook-share').click((e) => {
+            const shareUrl = 'https://pubg-holiday.com';
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}%2F&amp;src=sdkpreparse`;
+
+            popupWindow(facebookUrl, 'Share on Facebook', window, 500, 500);
+
+            openPopup(e, 'facebook')
+        });
+
+        $('.js-twitter-share').click((e) => {
+            const tweet = 'Cumhuriyet Bayramınız Kutlu Olsun! \n\n https://pubg-holiday.com';
+            const urlEncodedTweet = encodeURIComponent(tweet);
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${urlEncodedTweet}`;
+
+            popupWindow(twitterUrl, 'Share on Twitter', window, 500, 500);
+
+            openPopup(e, 'twitter')
+        });
+
         $(document).ready(async () => {
             if (window === window.parent) {
                 // ornek olarak facebook popup'ini actim.
@@ -684,6 +699,12 @@
                 })(),
             ]);
         });
+
+        function popupWindow(url, windowName, win, w, h) {
+            const y = win.top.outerHeight / 2 + win.top.screenY - ( h / 2);
+            const x = win.top.outerWidth / 2 + win.top.screenX - ( w / 2);
+            return win.open(url, windowName, `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${w}, height=${h}, top=${y}, left=${x}`);
+        }
     </script>
 </body>
 
