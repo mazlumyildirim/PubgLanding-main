@@ -1,0 +1,230 @@
+/** @group colors */
+.logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 32px;
+  height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid #414141;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+}
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  line-height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid #414141;
+  flex-shrink: 0;
+}
+.menu-item__text {
+  font-size: 24px;
+  color: #FFFFFF;
+  font-family: "League Gothic";
+  font-style: normal;
+}
+
+.header {
+  background: #101010;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/** @group colors */
+.footer {
+  background-color: #232323;
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+.footer-container {
+  padding: 5px 10px;
+}
+
+.footer-content {
+  width: 100%;
+  object-fit: contain;
+}
+
+/** @group colors */
+/** @group colors */
+.tab-section-ghost-text {
+  position: absolute;
+  width: calc(100% + 40px);
+  top: -10px;
+  left: -20px;
+  z-index: -1;
+}
+@media (min-width: 640px) {
+  .tab-section-ghost-text {
+    top: -20px;
+  }
+}
+@media (min-width: 820px) {
+  .tab-section-ghost-text {
+    width: calc(100% + 80px);
+    left: -40px;
+  }
+}
+@media (min-width: 1024px) {
+  .tab-section-ghost-text {
+    top: -40px;
+  }
+}
+
+.tab-section-top {
+  margin-bottom: 25px;
+}
+
+.tab-section {
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 640px) {
+  .tab-section-container {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+}
+.tab-section__title {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  color: #FFBE21;
+  padding-top: 25px;
+  margin-bottom: 4px;
+  font-family: "League Gothic";
+}
+@media (min-width: 640px) {
+  .tab-section__title {
+    font-size: 36px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .tab-section__title {
+    font-size: 64px;
+  }
+}
+.tab-section__subtitle {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "AgencyFB";
+}
+@media (min-width: 640px) {
+  .tab-section__subtitle {
+    font-size: 26px;
+    text-align: left;
+  }
+}
+.tab-section__share {
+  margin-top: 10px;
+}
+.tab-section__elements {
+  position: relative;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .tab-section__elements {
+    margin-block: 0px;
+    width: 60%;
+  }
+}
+.tab-section__item {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transform: scale(0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.tab-section__item.active {
+  position: relative;
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.tab-section__item img {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .tab-section__tabs {
+    width: calc(40% - 18px);
+    margin-left: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .tab-section__tabs {
+    width: calc(40% - 30px);
+    margin-left: 30px;
+  }
+}
+.tab-section__tab {
+  padding: 6px 10px;
+  background: #292929;
+  border-left: 2px solid #FFBE21;
+  margin-bottom: 6px;
+}
+@media (min-width: 1024px) {
+  .tab-section__tab {
+    padding: 8px 12px;
+  }
+}
+.tab-section__tab.active {
+  background: #FFBE21;
+}
+.tab-section__tab.active .tab-number, .tab-section__tab.active .tab-name {
+  color: #000000;
+}
+
+@media (min-width: 640px) {
+  .tab-section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.tab-number, .tab-name {
+  font-family: "AgencyFB";
+  font-size: 16px;
+}
+@media (min-width: 820px) {
+  .tab-number, .tab-name {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .tab-number, .tab-name {
+    font-size: 28px;
+  }
+}
+
+.tab-name {
+  text-transform: uppercase;
+}

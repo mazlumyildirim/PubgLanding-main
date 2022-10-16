@@ -1,0 +1,17 @@
+/** @group colors */
+.footer {
+  background-color: #232323;
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+.footer-container {
+  padding: 5px 10px;
+}
+
+.footer-content {
+  width: 100%;
+  object-fit: contain;
+}

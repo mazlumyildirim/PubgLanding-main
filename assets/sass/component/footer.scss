@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.footer{
+  background-color: $cBackground50;
+  margin-inline: auto;
+
+  @include bp(phone-large) {
+    max-width: calc(100% - 30px);
+  }
+
+  @include bp(tablet) {
+      max-width: calc(100% - 140px);
+  }
+}
+
+.footer-container {
+  padding: 5px 10px;
+}
+
+.footer-content {
+  width: 100%;
+  object-fit: contain;
+
+  @include bp(tablet) {
+    padding-inline: 15px;
+  }
+}

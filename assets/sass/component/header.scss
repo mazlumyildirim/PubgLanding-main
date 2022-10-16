@@ -1,0 +1,118 @@
+@import '../variables.scss';
+
+.logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 32px;
+  height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid $cBackground10;
+
+  @include bp(phone-large) {
+    width: 72px;
+    height: 70px;
+  }
+
+  @include bp(tablet) {
+    width: 72px;
+    height: 70px;
+    padding-inline: 18px;
+  }
+
+  @include bp(desktop) {
+    width: 86px;
+    height: 100px;
+    padding-inline: 30px;
+  }
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-item {
+  position: relative;
+  line-height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid $cBackground10;
+  flex-shrink: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 2px;
+    background-color: transparent;
+    transition: all .2s;
+
+    @include bp(desktop) {
+      height: 4px;
+    }
+  }
+
+  @include bp(phone-large) {
+    line-height: 70px;
+    padding-inline: 18px;
+  }
+
+  @include bp(desktop) {
+    line-height: 100px;
+    padding-inline: 28px;
+  }
+
+  &.active {
+    &:before {
+      content: '';
+      width: 100%;
+      background-color: $cPrimary;
+    }
+  }
+  
+  &__text {
+    display: block;
+    font-size: 24px;
+    color: $cNeutral00;
+    font-family: 'League Gothic';
+    font-style: normal;
+    text-decoration: none;
+
+    @include bp(phone-large) {
+      font-size: 32px;
+    }
+  }
+}
+
+.header {
+  background: $cBackground90;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+
+  @include bp(phone-large) {
+    margin-inline: auto;
+    max-width: calc(100% - 20px);
+  }
+
+  @include bp(desktop) {
+      max-width: calc(100% - 160px);
+  }
+}

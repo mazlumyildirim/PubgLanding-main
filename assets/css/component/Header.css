@@ -1,0 +1,48 @@
+/** @group colors */
+.logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 32px;
+  height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid #414141;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+}
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-item {
+  line-height: 50px;
+  padding-inline: 10px;
+  border-right: 1px solid #414141;
+  flex-shrink: 0;
+}
+.menu-item__text {
+  font-size: 24px;
+  color: #FFFFFF;
+  font-family: "League Gothic";
+  font-style: normal;
+}
+
+.header {
+  background: #101010;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,9 @@
+.hero {
+  width: 100vw;
+  height: auto;
+}
+
+.hero-background {
+  width: 100%;
+  object-fit: contain;
+}
