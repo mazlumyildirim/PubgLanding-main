@@ -51,12 +51,16 @@
                             </div>
                             <div class="share-items">
                                 <div class="share-item" onclick="openPopup(event, 'facebook')">
-                                    <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
-                                    <span class="share-item__text">Facebook</span>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://pubg-holiday.com%2F&amp;src=sdkpreparse" target="_blank">
+                                        <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
+                                        <span class="share-item__text">Facebook</span>
+                                    </a>
                                 </div>
                                 <div class="share-item" onclick="openPopup(event, 'twitter')">
-                                    <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
-                                    <span class="share-item__text">Twitter</span>
+                                    <a href="https://twitter.com/intent/tweet?text=PUBG%20Cumhuriyet%20Bayram%C4%B1%21" target="_blank">
+                                        <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
+                                        <span class="share-item__text">Twitter</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -124,15 +128,15 @@
                             <img class="intro-player__bg" src="./assets/images/intro-image.jpg" alt="">
                         </div>
                         <div class="intro-buttons">
-                            <button class="intro-button national-day">
+                            <button class="intro-button national-day" id="js-like-holiday">
                                 <img class="button-icon" src="./assets/icons/icon-flag.svg" alt="button icon" />
                                 <span class="button-text">CUMHURİYET BAYRAMI KUTLU OLSUN!</span>
-                                <span class="button-number">3</span>
+                                <span class="button-number" id="js-like-holiday-text"></span>
                             </button>
-                            <button class="intro-button like">
+                            <button class="intro-button like" id="js-like">
                                 <img class="button-icon" src="./assets/icons/icon-like.svg" alt="button icon" />
                                 <span class="button-text">BEĞENİ GÖSTER!</span>
-                                <span class="button-number">12</span>
+                                <span class="button-number" id="js-like-text"></span>
                             </button>
                         </div>
                     </div>
@@ -478,6 +482,8 @@
     <script src="./assets/script/jquery-3.6.1.slim.js"></script>
     <script src="./assets/script/swiper-bundle.min.js"></script>
     <script>
+        const api = 'http://127.0.0.1:3000';
+
         var swiper = new Swiper(".songList", {
             slidesPerView: 2,
             grid: {
@@ -621,6 +627,42 @@
             $(".js-tab-content").removeClass("active");
             $(this).addClass("active");
             $(".js-tab-content#" + target).addClass("active");
+        });
+        
+        const likesText = $('#js-like-text');
+        const holidayLikesText = $('#js-like-holiday-text');
+
+        $("#js-like").click(async () => {
+            const response = await fetch(`${api}/likes`, {
+                method: 'POST',
+            });
+            const likes = await response.json();
+
+            likesText.html(likes);
+        });
+        
+        $("#js-like-holiday").click(async () => {
+            const response = await fetch(`${api}/holiday-likes`, {
+                method: 'POST',
+            });
+            const likes = await response.json();
+
+            holidayLikesText.html(likes);
+        });
+
+        $(document).ready(async () => {
+            await Promise.all([
+                (async () => {
+                    const response = await fetch(`${api}/likes`);
+                    const likes = await response.json();
+                    likesText.html(likes);
+                })(),
+                (async () => {
+                    const response = await fetch(`${api}/holiday-likes`);
+                    const holidayLikes = await response.json();
+                    holidayLikesText.html(holidayLikes);
+                })(),
+            ]);
         });
     </script>
 </body>

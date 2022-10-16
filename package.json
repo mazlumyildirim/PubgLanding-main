@@ -1,6 +1,7 @@
 {
   "name": "themplatepure",
   "version": "1.0.0",
+  "type": "module",
   "description": "pureThemplate",
   "main": "gulpfile.js",
   "scripts": {
@@ -13,5 +14,10 @@
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^2.0.0",
     "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "lowdb": "^3.0.0"
   }
 }
