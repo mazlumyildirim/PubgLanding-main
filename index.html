@@ -116,9 +116,15 @@
                                 <img src="./assets/icons/visa.svg" alt="" class="intro-shape-visa">
                                 <img src="./assets/icons/stamp.svg" alt="" class="intro-shape-stamp">
                             </div>
+                            <iframe
+                                src="https://drive.google.com/file/d/1dXC9vkdVUrvKYnvDkRTgoy3rzjXm9sWF/preview"
+                                width="640"
+                                height="480"
+                                allow="autoplay">
+                            </iframe>
                             <!-- <video class="intro-player__bg" controls class="video" id="video" preload="metadata"
                                 poster="poster.jpg">
-                                <source src="">
+                                <source src="https://www.youtube.com/watch?v=ExlnjT3yoyw">
                                 </source>
                             </video> -->
                             <img class="intro-player__bg" src="./assets/images/intro-image.jpg" alt="">
@@ -610,11 +616,16 @@
                 shareItem.classList.remove("active");
             })
         }
+        
+        const audio = new Audio('./assets/audio/audio.ogg');
 
-        window.addEventListener('load', function() {
-            var audio = new Audio('./assets/audio/audio.ogg');
-            audio.play();
-        })
+        const playAudioAttempt = setInterval(() => {
+            audio.play()
+                .then(() => {
+                    clearInterval(playAudioAttempt);
+                })
+                .catch(() => undefined)
+        }, 200);
 
         $(".js-tab").click(function(e) {
             e.preventDefault();
@@ -672,7 +683,7 @@
         });
 
         $(document).ready(async () => {
-            if (window === window.parent) {
+            if (window !== window.parent) {
                 // ornek olarak facebook popup'ini actim.
                 // olmasi gereken popup'i kodladiginda burdan ismini degistirebilirsin
                 openPopup(event, 'facebook');
