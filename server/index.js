@@ -16,7 +16,7 @@ const adapter = new JSONFile(path.join(__dirname, 'db.json'));
 const db = new Low(adapter);
 await db.read();
 
-db.data ||= { likes: 0, holidayLikes: 0 };
+db.data = db.data || { likes: 0, holidayLikes: 0 };
 
 app.get('/holiday-likes', async (req, res) => {
   res.status(200).send(`${db.data.holidayLikes}`);
