@@ -590,9 +590,9 @@
                 });
                 const activeElementData = activityItem.getAttribute('data-target');
                 document.getElementById(activeElementData).classList.add('active');
-                openActivityModal()
-            })
-        })
+                openActivityModal();
+            });
+        });
 
         openPopup = (e, popupName) => {
             const popup = document.querySelector('.popup-content');
@@ -657,6 +657,12 @@
         });
 
         $(document).ready(async () => {
+            if (window === window.parent) {
+                // ornek olarak facebook popup'ini actim.
+                // olmasi gereken popup'i kodladiginda burdan ismini degistirebilirsin
+                openPopup(event, 'facebook');
+            }
+
             await Promise.all([
                 (async () => {
                     if (localStorage.getItem('liked')) {
