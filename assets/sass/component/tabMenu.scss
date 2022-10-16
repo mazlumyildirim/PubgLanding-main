@@ -1,167 +1,148 @@
 @import '../variables.scss';
 @import '../helpers.scss';
-
 .tab-section-ghost-text {
-  position: absolute;
-  width: calc(100% + 40px);
-  top: -10px;
-  left: -20px;
-  z-index: -1;
-
-  @include bp(phone-large) {
-    top: -20px;
-  }
-
-  @include bp(tablet) {
-    width: calc(100% + 80px);
-    left: -40px;
-  }
-
-  @include bp(desktop) {
-    top: -40px;
-  }
+    position: absolute;
+    width: calc(100% + 40px);
+    top: -10px;
+    left: -20px;
+    z-index: -1;
+    @include bp(phone-large) {
+        top: -20px;
+    }
+    @include bp(tablet) {
+        width: calc(100% + 80px);
+        left: -40px;
+    }
+    @include bp(desktop) {
+        top: -40px;
+    }
 }
 
 .tab-section-top {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .tab-section {
-  position: relative;
-  z-index: 1;
-
-  &-container {
-    @include bp(phone-large) {
-      display: flex;
-      align-items: flex-start;
-      margin-top: 30px;
-    }
-  }
-
-  &__title {
-    font-size: 24px;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    color: $cPrimary;
-    padding-top: 25px;
-    margin-bottom: 4px;
-    font-family: 'League Gothic';
-
-    @include bp(phone-large) {
-      font-size: 36px;
-      margin-bottom: 0;
-      text-align: left;
-    }
-
-    @include bp(desktop) {
-      font-size: 64px;
-    }
-  }
-
-  &__subtitle {
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family: 'AgencyFB';
-
-    @include bp(phone-large) {
-      font-size: 26px;
-      text-align: left;
-    }
-  }
-
-  &__share {
-    margin-top: 10px;
-  }
-
-  &__elements {
     position: relative;
-    margin-bottom: 10px;
-
-    @include bp(phone-large) {
-      margin-block: 0px;
-      width: 60%;
+    z-index: 1;
+    &-container {
+        @include bp(phone-large) {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
     }
-  }
-
-  &__item {
-    width: 100%;
-    position: absolute;
-    top: 0;
-
-    transform: scale(.96);
-    opacity: 0;
-    pointer-events: none;
-    transition: all .3s;
-
-    &.active {
-      position: relative;
-      
-      transform: scale(1);
-      opacity: 1;
-      pointer-events: auto;
+    &__title {
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        color: $cPrimary;
+        padding-top: 25px;
+        margin-bottom: 4px;
+        font-family: 'League Gothic';
+        @include bp(phone-large) {
+            font-size: 36px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        @include bp(desktop) {
+            font-size: 64px;
+        }
     }
-
-    img {
-      width: 100%;
+    &__subtitle {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: 'AgencyFB';
+        @include bp(phone-large) {
+            font-size: 26px;
+            text-align: left;
+        }
     }
-  }
-
-  &__tabs {
-    @include bp(phone-large) {
-      width: calc(40% - 18px);
-      margin-left: 18px;
+    &__share {
+        margin-top: 10px;
     }
-
-    @include bp(desktop) {
-      width: calc(40% - 30px);
-      margin-left: 30px;
+    &__elements {
+        position: relative;
+        margin-bottom: 10px;
+        @include bp(phone-large) {
+            margin-block: 0px;
+            width: 60%;
+        }
     }
-  }
-
-  &__tab {
-    padding: 6px 10px;
-    background: $cBackground40;
-    border-left: 2px solid $cPrimary;
-    margin-bottom: 6px;
-
-    @include bp(desktop) {
-      padding: 8px 12px;
+    &__item {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        transform: scale(.96);
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s;
+        &.active {
+            position: relative;
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        img {
+            width: 100%;
+        }
     }
-
-    &.active {
-      background: $cPrimary;
-
-      .tab-number, .tab-name {
-        color: $cBackground100;
-      }
+    &__tabs {
+        @include bp(phone-large) {
+            width: calc(40% - 18px);
+            margin-left: 18px;
+        }
+        @include bp(desktop) {
+            width: calc(40% - 30px);
+            margin-left: 30px;
+        }
     }
-  }
+    &__tab {
+        padding: 6px 10px;
+        background: $cBackground40;
+        border-left: 2px solid $cPrimary;
+        margin-bottom: 6px;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover {
+            color: $cPrimary;
+        }
+        @include bp(desktop) {
+            padding: 8px 12px;
+        }
+        &.active {
+            background: $cPrimary;
+            .tab-number,
+            .tab-name {
+                color: $cBackground100;
+            }
+        }
+    }
 }
 
 .tab-section-top {
-  @include bp(phone-large) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    @include bp(phone-large) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-.tab-number, .tab-name {
-  font-family: "AgencyFB";
-  font-size: 16px;
-
-  @include bp(tablet) {
-    font-size: 18px;
-  }
-
-  @include bp(desktop) {
-    font-size: 28px;
-  }
+.tab-number,
+.tab-name {
+    font-family: "AgencyFB";
+    font-size: 16px;
+    @include bp(tablet) {
+        font-size: 18px;
+    }
+    @include bp(desktop) {
+        font-size: 28px;
+    }
 }
 
 .tab-name {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }

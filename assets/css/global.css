@@ -153,6 +153,11 @@ body {
 .share-item {
   text-align: center;
   margin-inline: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.share-item:hover {
+  color: #FFBE21;
 }
 .share-item__icon {
   display: block;
@@ -184,7 +189,7 @@ body {
   background-color: #FFBE21;
   padding: 4px;
   left: 50%;
-  transform: translate(-50%, -6px);
+  transform: translate(-50%, -12px);
   border-radius: 4px;
   z-index: 2;
 }
@@ -386,6 +391,7 @@ body {
   border: none;
   outline: none;
   border-radius: 3px;
+  transition: all 0.3s;
 }
 @media (min-width: 640px) {
   .intro-button {
@@ -398,6 +404,9 @@ body {
 }
 .intro-button.like {
   transform: rotate(2.13deg) translateY(8px);
+}
+.intro-button:hover {
+  transform: rotate(0);
 }
 
 .button-icon {
@@ -852,7 +861,13 @@ body {
     padding: 12px 16px;
   }
 }
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
+  .button-upload {
+    font-size: 24px;
+    padding: 20px 16px;
+  }
+}
+@media (min-width: 1366px) {
   .button-upload {
     font-size: 36px;
     padding: 32px 16px;
@@ -1092,4 +1107,108 @@ body {
 }
 .modal-activity-image.active {
   display: block;
+}
+
+.popup-content {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.popup-content.open-popup {
+  display: flex;
+}
+
+.popup {
+  width: calc(100% - 40px);
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  display: none;
+}
+.popup.active {
+  display: block;
+}
+@media (min-width: 640px) {
+  .popup {
+    width: 600px;
+  }
+}
+@media (min-width: 820px) {
+  .popup {
+    width: 700px;
+  }
+}
+
+.popup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+@media (min-width: 640px) {
+  .popup-head {
+    padding: 15px 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .popup-head {
+    padding: 18px 24px;
+  }
+}
+
+.popup-title {
+  font-size: 21px;
+  text-transform: uppercase;
+  font-family: "League Gothic";
+  color: #1E1E1E;
+  text-shadow: 0px 4px 0px #ffbe21;
+}
+@media (min-width: 640px) {
+  .popup-title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 820px) {
+  .popup-title {
+    font-size: 32px;
+  }
+}
+
+.popup-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #FFBE21;
+  cursor: pointer;
+}
+.popup-close__image {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.popup-inner {
+  padding-inline: 20px;
+  padding-bottom: 20px;
+  padding-top: 8px;
+}
+@media (min-width: 640px) {
+  .popup-inner {
+    padding-bottom: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .popup-inner {
+    padding-inline: 24px;
+    padding-bottom: 36px;
+  }
 }
