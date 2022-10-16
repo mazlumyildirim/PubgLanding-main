@@ -629,35 +629,49 @@
             $(".js-tab-content#" + target).addClass("active");
         });
         
+        const likeButton = $('#js-like');
+        const holidayLikeButton = $('#js-like-holiday');
         const likesText = $('#js-like-text');
         const holidayLikesText = $('#js-like-holiday-text');
 
-        $("#js-like").click(async () => {
+        likeButton.click(async () => {
             const response = await fetch(`${api}/likes`, {
                 method: 'POST',
             });
             const likes = await response.json();
 
             likesText.html(likes);
+            localStorage.setItem('liked', 'true');
+            likeButton.prop('disabled', true);
         });
         
-        $("#js-like-holiday").click(async () => {
+        holidayLikeButton.click(async () => {
             const response = await fetch(`${api}/holiday-likes`, {
                 method: 'POST',
             });
             const likes = await response.json();
 
             holidayLikesText.html(likes);
+            localStorage.setItem('holiday-liked', 'true');
+            holidayLikeButton.prop('disabled', true);
         });
 
         $(document).ready(async () => {
             await Promise.all([
                 (async () => {
+                    if (localStorage.getItem('liked')) {
+                        likeButton.prop('disabled', true);
+                    }
+
                     const response = await fetch(`${api}/likes`);
                     const likes = await response.json();
                     likesText.html(likes);
                 })(),
                 (async () => {
+                    if (localStorage.getItem('holiday-liked')) {
+                        holidayLikeButton.prop('disabled', true);
+                    }
+
                     const response = await fetch(`${api}/holiday-likes`);
                     const holidayLikes = await response.json();
                     holidayLikesText.html(holidayLikes);
