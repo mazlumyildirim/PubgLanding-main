@@ -365,9 +365,32 @@
 }
 
 .modal-theme-song-content {
-    height: 82vh;
-    max-width: 90vw;
-    width: 100%;
+    width: calc(100vw - 20px);
+    height: 170px;
+    @media screen and (min-width: 360px) {
+        height: 200px;
+    }
+    @media screen and (min-width: 420px) {
+        height: 230px;
+    }
+    @media screen and (min-width: 480px) {
+        height: 300px;
+    }
+    @include bp(phone-large) {
+        height: 330px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 730px;
+        height: 400px;
+    }
+    @include bp(desktop) {
+        width: 890px;
+        height: 500px;
+    }
+    @include bp(desktop-up) {
+        width: 980px;
+        height: 560px;
+    }
 }
 
 .modal-theme-song-close {
@@ -378,10 +401,9 @@
     }
 }
 
-.modal-theme-song-image {
-    width: 100%;
+.modal-theme-song-item {
     height: 100%;
-    object-fit: contain;
+    width: 100%;
     display: none;
     &.active {
         display: block;

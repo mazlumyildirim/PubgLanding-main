@@ -950,3 +950,40 @@ body {
         object-fit: contain;
     }
 }
+
+.sound-control {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 70px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #424242;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    transform: scale(1);
+    transition: all .3s;
+    cursor: pointer;
+    z-index: 10;
+    &:hover {
+        transform: scale(1.1);
+    }
+    &.open {
+        .volume-open {
+            display: none;
+        }
+        .volume-off {
+            display: inline-block;
+        }
+    }
+    &.off {
+        .volume-open {
+            display: inline-block;
+        }
+        .volume-off {
+            display: none;
+        }
+    }
+}
