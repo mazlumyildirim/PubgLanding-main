@@ -1140,6 +1140,48 @@ body {
   display: block;
 }
 
+.modal-theme-song {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  display: none;
+}
+.modal-theme-song.active {
+  display: flex;
+}
+
+.modal-theme-song-content {
+  height: 82vh;
+  max-width: 90vw;
+  width: 100%;
+}
+
+.modal-theme-song-close {
+  margin-left: auto;
+  margin-bottom: 6px;
+}
+@media (min-width: 820px) {
+  .modal-theme-song-close {
+    margin-bottom: 12px;
+  }
+}
+
+.modal-theme-song-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+.modal-theme-song-image.active {
+  display: block;
+}
+
 .popup-content {
   position: fixed;
   display: none;

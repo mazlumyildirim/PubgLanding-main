@@ -444,6 +444,28 @@
         </div>
     </div>
 
+    <div class="modal-theme-song">
+        <div class="modal-theme-song-wrapper">
+            <div class="modal-close modal-theme-song-close" onclick="closeThemeSongModal()">
+                <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
+            </div>
+            <div class="modal-theme-song-content">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+                <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
+            </div>
+        </div>
+    </div>
+
     <div class="popup-content">
         <div class="popup" id="facebook">
             <div class="popup-head">
@@ -574,16 +596,23 @@
             document.querySelector('.modal-activity').classList.remove('active')
         }
 
+        openThemeSongModal = () => {
+            document.querySelector('.modal-theme-song').classList.add('active')
+        }
+
+        closeThemeSongModal = () => {
+            document.querySelector('.modal-theme-song').classList.remove('active')
+        }
+
         // set data attr
         const activityElements = document.querySelectorAll('.activity-element');
         const modalActivityElements = document.querySelectorAll('.modal-activity-image');
-        const activityModalList = document.querySelectorAll('.modal-activity-image');
 
         activityElements.forEach((activityItem, index) => {
             activityItem.setAttribute('data-target', 'item-' + index)
         })
 
-        activityModalList.forEach((activityModalItem, index) => {
+        modalActivityElements.forEach((activityModalItem, index) => {
             activityModalItem.setAttribute('id', 'item-' + index)
         })
 
@@ -595,6 +624,28 @@
                 const activeElementData = activityItem.getAttribute('data-target');
                 document.getElementById(activeElementData).classList.add('active');
                 openActivityModal();
+            });
+        });
+        // ======
+        const themeSongElement = document.querySelectorAll('.theme-song-item');
+        const modalThemeSongElement = document.querySelectorAll('.modal-theme-song-image');
+
+        themeSongElement.forEach((themeSongItem, index) => {
+            themeSongItem.setAttribute('data-target', 'song-item-' + index)
+        })
+
+        modalThemeSongElement.forEach((themeSongElm, index) => {
+            themeSongElm.setAttribute('id', 'song-item-' + index)
+        })
+
+        themeSongElement.forEach(themeSongItem => {
+            themeSongItem.addEventListener("click", () => {
+                modalThemeSongElement.forEach(modalThemeSongItem => {
+                    modalThemeSongItem.classList.remove("active");
+                });
+                const activeElementData = themeSongItem.getAttribute('data-target');
+                document.getElementById(activeElementData).classList.add('active');
+                openThemeSongModal();
             });
         });
 
