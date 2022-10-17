@@ -2062,7 +2062,7 @@ body {
 }
 
 .share-message {
-  margin-right: 50px;
+  margin-right: 10px;
 }
 @media (min-width: 820px) {
   .share-message {
