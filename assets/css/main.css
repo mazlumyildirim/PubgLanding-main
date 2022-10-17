@@ -1973,8 +1973,11 @@ body {
 }
 
 .intro-content {
-  z-index: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 }
 
 .intro-ghost-title {
@@ -2011,20 +2014,41 @@ body {
 
 .intro-player {
   position: relative;
-  width: calc(100% - 40px);
-  padding-inline: 20px;
+  width: 280px;
+  height: 170px;
+}
+@media screen and (min-width: 380px) {
+  .intro-player {
+    width: 350px;
+    height: 220px;
+  }
 }
 @media (min-width: 640px) {
   .intro-player {
-    max-width: 76%;
-    display: block;
-    margin-inline: auto;
+    width: 550px;
+    height: 320px;
   }
 }
-.intro-player__bg {
+@media (min-width: 820px) {
+  .intro-player {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media (min-width: 1024px) {
+  .intro-player {
+    width: 720px;
+    height: 420px;
+  }
+}
+@media (min-width: 1366px) {
+  .intro-player {
+    width: 940px;
+    height: 540px;
+  }
+}
+.intro-player__video {
   position: relative;
-  width: 100%;
-  object-fit: contain;
   z-index: 0;
 }
 
@@ -2032,13 +2056,14 @@ body {
   position: absolute;
   width: 45px;
   object-fit: contain;
-  right: -20px;
+  right: -40px;
   top: 15px;
   z-index: 2;
 }
 @media (min-width: 820px) {
   .intro-shape-stamp {
     width: 80px;
+    right: -60px;
   }
 }
 @media (min-width: 1366px) {
@@ -2052,14 +2077,14 @@ body {
   position: absolute;
   width: 80px;
   object-fit: contain;
-  left: -20px;
+  left: -40px;
   bottom: -15px;
   z-index: 0;
 }
 @media (min-width: 820px) {
   .intro-shape-visa {
     width: 120px;
-    left: -40px;
+    left: -60px;
     bottom: -20px;
   }
 }
@@ -2083,6 +2108,12 @@ body {
   outline: none;
   border-radius: 3px;
   transition: all 0.3s;
+}
+.intro-button:disabled {
+  background-color: #cccccc;
+}
+.intro-button:disabled .button-text {
+  color: #818181;
 }
 @media (min-width: 640px) {
   .intro-button {

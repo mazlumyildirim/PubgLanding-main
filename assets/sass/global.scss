@@ -244,8 +244,11 @@ body {
 }
 
 .intro-content {
-    z-index: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
 }
 
 .intro-ghost-title {
@@ -276,17 +279,30 @@ body {
 
 .intro-player {
     position: relative;
-    width: calc(100% - 40px);
-    padding-inline: 20px;
-    @include bp(phone-large) {
-        max-width: 76%;
-        display: block;
-        margin-inline: auto;
+    width: 280px;
+    height: 170px;
+    @media screen and (min-width: 380px) {
+        width: 350px;
+        height: 220px;
     }
-    &__bg {
+    @include bp(phone-large) {
+        width: 550px;
+        height: 320px;
+    }
+    @include bp(tablet) {
+        width: 640px;
+        height: 360px;
+    }
+    @include bp(desktop) {
+        width: 720px;
+        height: 420px;
+    }
+    @include bp(desktop-up) {
+        width: 940px;
+        height: 540px;
+    }
+    &__video {
         position: relative;
-        width: 100%;
-        object-fit: contain;
         z-index: 0;
     }
 }
@@ -295,11 +311,12 @@ body {
     position: absolute;
     width: 45px;
     object-fit: contain;
-    right: -20px;
+    right: -40px;
     top: 15px;
     z-index: 2;
     @include bp(tablet) {
         width: 80px;
+        right: -60px;
     }
     @include bp(desktop-up) {
         width: 134px;
@@ -311,12 +328,12 @@ body {
     position: absolute;
     width: 80px;
     object-fit: contain;
-    left: -20px;
+    left: -40px;
     bottom: -15px;
     z-index: 0;
     @include bp(tablet) {
         width: 120px;
-        left: -40px;
+        left: -60px;
         bottom: -20px;
     }
     @include bp(desktop-up) {
@@ -338,6 +355,12 @@ body {
     outline: none;
     border-radius: 3px;
     transition: all .3s;
+    &:disabled {
+        background-color: #cccccc;
+        .button-text {
+            color: #818181;
+        }
+    }
     @include bp(phone-large) {
         display: inline-flex;
         align-items: center;
