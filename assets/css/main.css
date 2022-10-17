@@ -3073,8 +3073,10 @@ body {
   z-index: 22;
 }
 .page-loader__image {
-  width: 357px;
-  height: 501px;
+  max-width: 357px;
+  max-height: 501px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
