@@ -1,335 +1,465 @@
 .modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 11;
-  display: none;
-  transition: all .3s;
-  
-  &.open-modal {
-    display: block;
-  }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 11;
+    display: none;
+    transition: all .3s;
+    &.open-modal {
+        display: block;
+    }
 }
 
 .modal-overlay {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba($cBackground100, 0.6);
-  z-index: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($cBackground100, 0.6);
+    z-index: 0;
 }
 
 .modal {
-  padding-inline: 20px;
-  position: absolute;
-  width: 100%;
-  max-width: calc(100% - 60px);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #cfd9ea;
-  padding-bottom: 20px;
-  border-radius: 3px;
-  transition: all .3s;
-  display: none;
-
-  &.active {
-    display: block;
-  }
-
-  @include bp(desktop) {
-    max-width: calc(100% - 200px);
-  }
-
-  @include bp(desktop-up) {
-    max-width: 1000px;
-  }
-
-  .modal-primary {
+    padding-inline: 20px;
+    position: absolute;
+    width: 100%;
+    max-width: calc(100% - 60px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #cfd9ea;
+    padding-bottom: 20px;
+    border-radius: 3px;
+    transition: all .3s;
     display: none;
-  }
+    &.active {
+        display: block;
+    }
+    @include bp(desktop) {
+        max-width: calc(100% - 200px);
+    }
+    @include bp(desktop-up) {
+        max-width: 1000px;
+    }
+    &.modal-second {
+        .modal-head {
+            @include bp(desktop) {
+                padding-inline: 20px;
+            }
+        }
+        .modal-content {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 15px 0px;
+            @include bp(desktop) {
+                padding: 15px 20px;
+            }
+        }
+    }
 }
 
 .modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  z-index: 1;
-  
-  @include bp(desktop) {
-    padding-top: 26px;
-    padding-bottom: 15px;
-  }
-
-  @include bp(desktop-up) {
-    padding-top: 32px;
-    padding-bottom: 20px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    z-index: 1;
+    @include bp(desktop) {
+        padding-top: 26px;
+        padding-bottom: 15px;
+    }
+    @include bp(desktop-up) {
+        padding-top: 32px;
+        padding-bottom: 20px;
+    }
 }
 
 .modal-footer {
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  @include bp(desktop) {
-    bottom: -60px;
-  }
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include bp(desktop) {
+        bottom: -60px;
+    }
 }
 
 .message-done {
-  border: none;
-  outline: none;
-  font-family: "League Gothic";
-  font-size: 18px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  background-color: $cPrimary;
-  color: $cBackground100;
-
-  @include bp(desktop) {
-    font-size: 24px;
-    padding: 10px 21px;
-  }
+    border: none;
+    outline: none;
+    font-family: "League Gothic";
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: $cPrimary;
+    color: $cBackground100;
+    @include bp(desktop) {
+        font-size: 24px;
+        padding: 10px 21px;
+    }
 }
 
 .modal-title {
-  font-size: 21px;
-  text-transform: uppercase;
-  font-family: "League Gothic";
-  color: $cBackground60;
-  text-shadow: 0px 4px 0px $cPrimary;
-  
-  @include bp(phone-large) {
-    font-size: 28px;
-  }
-  
-  @include bp(desktop) {
-    font-size: 48px;
-  }
-  
-  @include bp(desktop-up) {
-    font-size: 32px;
-    font-size: 64px;
-  }
+    font-size: 21px;
+    text-transform: uppercase;
+    font-family: "League Gothic";
+    color: $cBackground60;
+    text-shadow: 0px 4px 0px $cPrimary;
+    @include bp(phone-large) {
+        font-size: 28px;
+    }
+    @include bp(desktop) {
+        font-size: 48px;
+    }
+    @include bp(desktop-up) {
+        font-size: 32px;
+        font-size: 64px;
+    }
 }
 
 .modal-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 4px;
-  background-color: $cPrimary;
-  cursor: pointer;
-  
-  @include bp(desktop) {
-    border-radius: 6px;
-    width: 50px;
-    height: 50px;
-  }
-
-  img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: $cPrimary;
+    cursor: pointer;
     @include bp(desktop) {
-      width: 30px;
-      height: 30px;
+        border-radius: 6px;
+        width: 50px;
+        height: 50px;
     }
-  }
+    img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        @include bp(desktop) {
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 
 .modal-content {
-  position: relative;
-  padding: 15px 20px;
-  background-color: #363e4d;
-  box-shadow: inset 3px 4px 33px #485366;
-  overflow-y: scroll;
-  z-index: 1;
-
-  &:before {
-    display: none;
-    content: '';
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 20px;
-    height: 20px;
-    background-color: #cfd9ea;
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-
-    @include bp(desktop) {
-      display: inline;
+    position: relative;
+    padding: 15px 20px;
+    background-color: #363e4d;
+    box-shadow: inset 3px 4px 33px #485366;
+    overflow-y: scroll;
+    z-index: 1;
+    &:before {
+        display: none;
+        content: '';
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 20px;
+        height: 20px;
+        background-color: #cfd9ea;
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        @include bp(desktop) {
+            display: inline;
+        }
     }
-  }
-  
-  @include bp(desktop) {
-    padding: 30px 40px;
-    height: 380px;
-  }
-  
-  @include bp(desktop-up) {
-    padding: 44px 56px;
-    height: 450px;
-  }
-
-  iframe {
-    height: 100%;
-
     @include bp(desktop) {
-      height: 370px;
+        padding: 30px 40px;
+        height: 380px;
     }
-    
     @include bp(desktop-up) {
-      height: 440px;
+        padding: 44px 56px;
+        height: 450px;
     }
-  }
+    iframe {
+        height: 100%;
+        @include bp(desktop) {
+            height: 370px;
+        }
+        @include bp(desktop-up) {
+            height: 440px;
+        }
+    }
 }
 
 .modal-description-text {
-  font-family: "League Gothic";
-  font-size: 16px;
-  line-height: 1.3;
-
-  @include bp(phone-large) {
-    font-size: 21px;
-  }
-
-  @include bp(desktop) {
-    font-size: 26px;
-  }
-
-  @include bp(desktop-up) {
-    font-size: 32px;
-  }
+    font-family: "League Gothic";
+    font-size: 16px;
+    line-height: 1.3;
+    @include bp(phone-large) {
+        font-size: 21px;
+    }
+    @include bp(desktop) {
+        font-size: 26px;
+    }
+    @include bp(desktop-up) {
+        font-size: 32px;
+    }
 }
 
 .modal-shapes {
-  display: none;
-
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  @include bp(desktop) {
-    display: inline;
-  }
-
-  &__left {
+    display: none;
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: -40px;
-      top: 0;
-      width: 80px;
-      height: 260px;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
-      background: #cfd9ea;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: -40px;
-      bottom: 0;
-      width: 80px;
-      height: 160px;
-      clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-      background: #cfd9ea;
-    }
-  }
-
-  &__left-line {
-    position: absolute;
-    left: 0;
-    width: 10px;
-    height: 100%;
-    background: #febf21;
-    z-index: -1;
-  }
-
-  &__bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: -40px;
-      bottom: -25px;
-      width: 230px;
-      height: 60px;
-      clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
-      background: #cfd9ea;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -25px;
-      width: 400px;
-      height: 60px;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%);
-      background: #cfd9ea;
-    }
-  }
-
-  &__right {
-    position: absolute;
-    right: 0;
+    height: 100%;
     top: 0;
-    height: 100%;
-
-    &:before {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: 0;
-      width: 130px;
-      height: 160px;
-      clip-path: polygon(0 0, 100% 38%, 100% 100%, 0 100%);
-      background: #cfd9ea;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: -40px;
-      top: 0;
-      width: 80px;
-      height: 260px;
-      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-      background: #cfd9ea;
-    }
-  }
-
-  &__right-line {
-    position: absolute;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    background: #febf21;
+    left: 0;
     z-index: -1;
-  }
+    @include bp(desktop) {
+        display: inline;
+    }
+    &__left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        &:before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 80px;
+            height: 260px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+            background: #cfd9ea;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            left: -40px;
+            bottom: 0;
+            width: 80px;
+            height: 160px;
+            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+            background: #cfd9ea;
+        }
+    }
+    &__left-line {
+        position: absolute;
+        left: 0;
+        width: 10px;
+        height: 100%;
+        background: #febf21;
+        z-index: -1;
+    }
+    &__bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        &:before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            bottom: -25px;
+            width: 230px;
+            height: 60px;
+            clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
+            background: #cfd9ea;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            bottom: -25px;
+            width: 400px;
+            height: 60px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%);
+            background: #cfd9ea;
+        }
+    }
+    &__right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        &:before {
+            content: "";
+            position: absolute;
+            right: -40px;
+            bottom: 0;
+            width: 130px;
+            height: 160px;
+            clip-path: polygon(0 0, 100% 38%, 100% 100%, 0 100%);
+            background: #cfd9ea;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 80px;
+            height: 260px;
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+            background: #cfd9ea;
+        }
+    }
+    &__right-line {
+        position: absolute;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        background: #febf21;
+        z-index: -1;
+    }
+}
+
+.modal-activity {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba($cBackground100, 0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    display: none;
+    &.active {
+        display: flex;
+    }
+}
+
+.modal-activity-content {
+    height: 82vh;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.modal-activity-close {
+    margin-left: auto;
+    margin-bottom: 6px;
+    @include bp(tablet) {
+        margin-bottom: 12px;
+    }
+}
+
+.modal-activity-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.modal-theme-song {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba($cBackground100, 0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    display: none;
+    &.active {
+        display: flex;
+    }
+}
+
+.modal-theme-song-content {
+    height: 82vh;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.modal-theme-song-close {
+    margin-left: auto;
+    margin-bottom: 6px;
+    @include bp(tablet) {
+        margin-bottom: 12px;
+    }
+}
+
+.modal-theme-song-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.modal-form-text {
+    color: #1F1F1F;
+    font-size: 16px;
+    font-family: 'AgencyFB';
+    @include bp(phone-large) {
+        font-size: 18px;
+    }
+    @include bp(desktop) {
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+    @include bp(desktop-up) {
+        font-size: 24px;
+    }
+}
+
+.modal-form {
+    margin-top: 20px;
+    @include bp(desktop) {
+        margin-top: 50px;
+    }
+    &__item {
+        margin-bottom: 12px;
+        @include bp(desktop) {
+            margin-bottom: 24px;
+        }
+        @include bp(desktop-up) {
+            margin-bottom: 30px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__item-label {
+        font-size: 18px;
+        display: block;
+        font-family: "League Gothic";
+        margin-bottom: 6px;
+        color: #1F1F1F;
+        margin-left: 12px;
+        @include bp(phone-large) {
+            font-size: 21px;
+        }
+        @include bp(desktop) {
+            font-size: 24px;
+        }
+        @include bp(desktop-up) {
+            font-size: 32px;
+            margin-left: 20px;
+        }
+    }
+    &__item-input {
+        width: 100%;
+        padding: 12px 12px;
+        font-family: 'League Gothic';
+        color: $cNeutral00;
+        background-color: #363E4D;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        @include bp(phone-large) {
+            font-size: 21px;
+        }
+        @include bp(desktop) {
+            width: calc(100% - 20px);
+            font-size: 24px;
+            padding: 16px 20px;
+        }
+        @include bp(desktop-up) {
+            width: calc(100% - 20px);
+            font-size: 32px;
+            padding: 20px;
+        }
+    }
 }

@@ -149,11 +149,11 @@
                                 <span class="share-message__text">PAYLAŞ,<span class="br"> HEDİYELERİ KAP</span></span>
                             </div>
                             <div class="share-items">
-                                <div class="share-item js-facebook-share" onclick="openPopup(event, 'facebook')">
+                                <div class="share-item js-facebook-share">
                                     <img src="./assets/icons/icon-facebook.svg" class="share-item__icon" />
                                     <span class="share-item__text">Facebook</span>
                                 </div>
-                                <div class="share-item js-twitter-share" onclick="openPopup(event, 'twitter')">
+                                <div class="share-item js-twitter-share">
                                     <img src="./assets/icons/icon-twitter.svg" class="share-item__icon" />
                                     <span class="share-item__text">Twitter</span>
                                 </div>
@@ -333,16 +333,16 @@
         </div>
     </content>
 
-    <div class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <img class="footer-content" src="./assets/images/footer.png" alt="">
         </div>
-    </div>
+    </footer>
 
     <div class="modal-container modal-primary jsModal">
         <div class="modal-overlay"></div>
         <div class="modal-wrapper">
-            <div class="modal modal-first jsModalElement">
+            <div class="modal jsModalElement">
                 <div class="modal-head">
                     <div class="modal-title">JOIN the luck draw!</div>
                     <div class="modal-close" onclick="closeModal()">
@@ -355,7 +355,7 @@
                         İntikamını almak için ipuçlarını takip etmeye başladı.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="message-done">İŞLEM TAMAM!</button>
+                    <button onclick="closeModal()" class="message-done">İŞLEM TAMAM!</button>
                 </div>
                 <div class="modal-shapes">
                     <div class="modal-shapes__right">
@@ -368,20 +368,29 @@
                 </div>
             </div>
 
-            <div class="modal modal-second jsModalElement">
+            <div class="modal jsModalElement modal-second" id="share">
                 <div class="modal-head">
-                    <div class="modal-title">JOIN the luck draw!</div>
+                    <div class="modal-title">İŞTE BİZDEN SANA BİRKAÇ HEDİYE!</div>
                     <div class="modal-close" onclick="closeModal()">
                         <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
                     </div>
                 </div>
                 <div class="modal-content">
-                    <p class="modal-description-text">Sophia bir zamanlar bir kaçakçı şebekesinin elebaşıydı. Doğru ücret karşılığında bulup getiremeyeceği şey yoktu. Yakın zamanda gizemli bir müşteri Sophia'ya geldi ve onu uzak bir adadaki bir göreve gönderdi. Gizemli adam, Sophia'ya
-                        bir kişinin adada onunla buluşacağını söyledi. Takas tamamlanmasına rağmen diğer taraf, Sophia'nın ekibini pusuya düşürdü. Verilen çok büyük kayıpların ardından Sophia'nın ekibi dağıldı. Sophia beladan kaçacak bir tip değildir.
-                        İntikamını almak için ipuçlarını takip etmeye başladı.</p>
+                    <p class="modal-form-text">Nusa, tropik bölgede yer alan, 1x1 km ölçülerinde turistik bir adadır.Burada bol miktarda malzeme olduğundan oyuncular iniş yapar yapmaz heyecan verici savaşlara girebilirler.</p>
+                    <div class="modal-form">
+                        <div class="modal-form__item">
+                            <span class="modal-form__item-label">REDEMPTION CODE</span>
+                            <input class="modal-form__item-input" value="REDEMPTION CODE" />
+                        </div>
+
+                        <div class="modal-form__item">
+                            <span class="modal-form__item-label">REDEMPTION URL</span>
+                            <input class="modal-form__item-input text-primary" value="https://www.pubgmobile.com/tr/event/nusa" />
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="message-done">İŞLEM TAMAM!</button>
+                    <button onclick="closeModal()" class="message-done">İŞLEM TAMAM!</button>
                 </div>
                 <div class="modal-shapes">
                     <div class="modal-shapes__right">
@@ -394,7 +403,7 @@
                 </div>
             </div>
 
-            <div class="modal modal-third jsModalElement" id="upload">
+            <div class="modal jsModalElement" id="upload">
                 <div class="modal-head">
                     <div class="modal-title">JOIN the luck draw!</div>
                     <div class="modal-close" onclick="closeModal()">
@@ -407,7 +416,7 @@
                         İntikamını almak için ipuçlarını takip etmeye başladı.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="message-done">İŞLEM TAMAM!</button>
+                    <button onclick="closeModal()" class="message-done">İŞLEM TAMAM!</button>
                 </div>
                 <div class="modal-shapes">
                     <div class="modal-shapes__right">
@@ -462,32 +471,6 @@
                 <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
                 <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
                 <img src="./assets/images/theme-song.jpg" alt="" class="modal-theme-song-image">
-            </div>
-        </div>
-    </div>
-
-    <div class="popup-content">
-        <div class="popup" id="facebook">
-            <div class="popup-head">
-                <span class="popup-title">Facebook ile paylaş</span>
-                <div class="popup-close">
-                    <img src="./assets/icons/icon-close.svg" alt="" class="popup-close__image" onclick="closeSharePopup()">
-                </div>
-            </div>
-            <div class="popup-inner">
-                share container
-            </div>
-        </div>
-
-        <div class="popup" id="twitter">
-            <div class="popup-head">
-                <span class="popup-title">Twitter ile paylaş</span>
-                <div class="popup-close">
-                    <img src="./assets/icons/icon-close.svg" alt="" class="popup-close__image" onclick="closeSharePopup()">
-                </div>
-            </div>
-            <div class="popup-inner">
-                share container
             </div>
         </div>
     </div>
@@ -649,27 +632,6 @@
             });
         });
 
-        openPopup = (e, popupName) => {
-            const popup = document.querySelector('.popup-content');
-            const shareElement = document.querySelectorAll('.share-item');
-            popup.classList.add('open-popup')
-            shareElement.forEach(shareItem => {
-                shareItem.classList.remove("active");
-            })
-            document.getElementById(popupName).classList.add('active');
-            e.currentTarget.classList.add('active');
-        }
-
-        closeSharePopup = () => {
-            const popup = document.querySelector('.popup-content');
-            const shareElement = document.querySelectorAll('.popup');
-
-            popup.classList.remove('open-popup')
-            shareElement.forEach(shareItem => {
-                shareItem.classList.remove("active");
-            })
-        }
-
         const audio = new Audio('./assets/audio/audio.ogg');
 
         const playAudioAttempt = setInterval(() => {
@@ -721,8 +683,7 @@
             const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}%2F&amp;src=sdkpreparse`;
 
             popupWindow(facebookUrl, 'Share on Facebook', window, 500, 500);
-
-            openPopup(e, 'facebook')
+            openModal(e, 'share')
         });
 
         $('.js-twitter-share').click((e) => {
@@ -731,15 +692,14 @@
             const twitterUrl = `https://twitter.com/intent/tweet?text=${urlEncodedTweet}`;
 
             popupWindow(twitterUrl, 'Share on Twitter', window, 500, 500);
-
-            openPopup(e, 'twitter')
+            openModal(e, 'share')
         });
 
         $(document).ready(async() => {
             if (window !== window.parent) {
                 // ornek olarak facebook popup'ini actim.
                 // olmasi gereken popup'i kodladiginda burdan ismini degistirebilirsin
-                openPopup(event, 'facebook');
+                openModal(event, 'share');
             }
 
             await Promise.all([
