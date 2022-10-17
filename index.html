@@ -470,11 +470,23 @@
         </div>
     </div>
 
+    <div class="page-loader">
+        <img src="./assets/images/base/loader.gif" alt="" class="page-loader__image">
+    </div>
+
     <script src="./assets/script/main.js"></script>
     <script src="./assets/script/jquery-3.6.1.slim.js"></script>
     <script src="./assets/script/swiper-bundle.min.js"></script>
     <script>
         const api = 'http://127.0.0.1:3000';
+
+        document.onreadystatechange = function() {
+            if (document.readyState !== "complete") {
+                document.querySelector(".page-loader").style.visibility = "visible";
+            } else {
+                document.querySelector(".page-loader").style.display = "none";
+            }
+        };
 
         var swiper = new Swiper(".songList", {
             slidesPerView: 2,
