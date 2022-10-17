@@ -329,7 +329,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sound-control open">
+                <div class="sound-control" onclick="mutedSound()">
                     <img src="./assets/icons/volume-open.svg" alt="" class="sound-control-icon volume-open">
                     <img src="./assets/icons/volume-off.svg" alt="" class="sound-control-icon volume-off">
                 </div>
@@ -681,6 +681,17 @@
                 })
                 .catch(() => undefined)
         }, 200);
+
+        mutedSound = () => {
+            const soundControl = document.querySelector('.sound-control');
+            if (soundControl.classList.contains('paused')) {
+                document.querySelector('.sound-control').classList.remove('paused')
+                audio.play();
+            } else {
+                audio.pause();
+                document.querySelector('.sound-control').classList.add('paused')
+            }
+        }
 
         $(".js-tab").click(function(e) {
             e.preventDefault();

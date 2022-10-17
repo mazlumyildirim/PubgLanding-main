@@ -970,15 +970,13 @@ body {
     &:hover {
         transform: scale(1.1);
     }
-    &.open {
-        .volume-open {
-            display: none;
-        }
-        .volume-off {
-            display: inline-block;
-        }
+    .volume-open {
+        display: none;
     }
-    &.off {
+    .volume-off {
+        display: inline-block;
+    }
+    &.paused {
         .volume-open {
             display: inline-block;
         }

@@ -1141,15 +1141,15 @@ body {
 .sound-control:hover {
   transform: scale(1.1);
 }
-.sound-control.open .volume-open {
+.sound-control .volume-open {
   display: none;
 }
-.sound-control.open .volume-off {
+.sound-control .volume-off {
   display: inline-block;
 }
-.sound-control.off .volume-open {
+.sound-control.paused .volume-open {
   display: inline-block;
 }
-.sound-control.off .volume-off {
+.sound-control.paused .volume-off {
   display: none;
 }
