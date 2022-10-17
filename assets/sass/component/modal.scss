@@ -452,14 +452,9 @@
             font-size: 21px;
         }
         @include bp(desktop) {
-            width: calc(100% - 20px);
+            width: calc(100% - 40px);
             font-size: 24px;
             padding: 16px 20px;
-        }
-        @include bp(desktop-up) {
-            width: calc(100% - 20px);
-            font-size: 32px;
-            padding: 20px;
         }
     }
 }
