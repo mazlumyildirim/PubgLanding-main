@@ -11,6 +11,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
+
+    <!-- CHANGE ID -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxx"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        // CHANGE ID
+        gtag('config', 'UA-xxxx');
+    </script>
 </head>
 
 <body>
@@ -721,33 +733,6 @@
             $(".js-tab-content#" + target).addClass("active");
         });
 
-        const likeButton = $('#js-like');
-        const holidayLikeButton = $('#js-like-holiday');
-        const likesText = $('#js-like-text');
-        const holidayLikesText = $('#js-like-holiday-text');
-
-        likeButton.click(async() => {
-            const response = await fetch(`${api}/likes`, {
-                method: 'POST',
-            });
-            const likes = await response.json();
-
-            likesText.html(likes);
-            localStorage.setItem('liked', 'true');
-            likeButton.prop('disabled', true);
-        });
-
-        holidayLikeButton.click(async() => {
-            const response = await fetch(`${api}/holiday-likes`, {
-                method: 'POST',
-            });
-            const likes = await response.json();
-
-            holidayLikesText.html(likes);
-            localStorage.setItem('holiday-liked', 'true');
-            holidayLikeButton.prop('disabled', true);
-        });
-
         $('.js-facebook-share').click((e) => {
             const shareUrl = 'https://pubg-holiday.com';
             const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}%2F&amp;src=sdkpreparse`;
@@ -767,31 +752,8 @@
 
         $(document).ready(async() => {
             if (window !== window.parent) {
-                // ornek olarak facebook popup'ini actim.
-                // olmasi gereken popup'i kodladiginda burdan ismini degistirebilirsin
                 openModal(event, 'share');
             }
-
-            await Promise.all([
-                (async() => {
-                    if (localStorage.getItem('liked')) {
-                        likeButton.prop('disabled', true);
-                    }
-
-                    const response = await fetch(`${api}/likes`);
-                    const likes = await response.json();
-                    likesText.html(likes);
-                })(),
-                (async() => {
-                    if (localStorage.getItem('holiday-liked')) {
-                        holidayLikeButton.prop('disabled', true);
-                    }
-
-                    const response = await fetch(`${api}/holiday-likes`);
-                    const holidayLikes = await response.json();
-                    holidayLikesText.html(holidayLikes);
-                })(),
-            ]);
         });
 
         function popupWindow(url, windowName, win, w, h) {
@@ -799,6 +761,81 @@
             const x = win.top.outerWidth / 2 + win.top.screenX - (w / 2);
             return win.open(url, windowName, `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${w}, height=${h}, top=${y}, left=${x}`);
         }
+
+        // LIKE COUNT 
+
+        const startingTime = 1666732179561;
+        let likeCountHoliday = 100;
+        let likeCountRegular = 100;
+        const likeCountHolidayCoefficient = [2.3, 3.7];
+        const likeCountRegularCoefficient = [1.2, 3.3];
+        const likeCountHolidayCoefficientAfter13th = [1.5, 3.1];
+        const likeCountRegularCoefficientAfter13th = [0.7, 2.5];
+
+        const isAfter13th = new Date('11.13.2022') < new Date();
+
+        const diffInSeconds = Math.floor((Date.now() - startingTime) / 1000);
+
+        [...Array(diffInSeconds).keys()].forEach((i) => {
+            if (isAfter13th) {
+                likeCountHoliday += likeCountHolidayCoefficientAfter13th[i % 2 === 0 ? 0 : 1];
+                likeCountRegular += likeCountRegularCoefficientAfter13th[i % 2 === 0 ? 0 : 1];
+            } else {
+                likeCountHoliday += likeCountHolidayCoefficient[i % 2 === 0 ? 0 : 1];
+                likeCountRegular += likeCountRegularCoefficient[i % 2 === 0 ? 0 : 1];
+            }
+        });
+
+        likeCountHoliday = Math.ceil(likeCountHoliday / 2);
+        likeCountRegular = Math.ceil(likeCountRegular / 2);
+        
+        const likeButton = $('#js-like');
+        const holidayLikeButton = $('#js-like-holiday');
+        const likesText = $('#js-like-text');
+        const holidayLikesText = $('#js-like-holiday-text');
+
+        if (localStorage.getItem('liked')) {
+            likeButton.prop('disabled', true);
+        }
+
+        if (localStorage.getItem('holiday-liked')) {
+            holidayLikeButton.prop('disabled', true);
+        }
+
+        likesText.html(likeCountRegular);
+        holidayLikesText.html(likeCountHoliday);
+
+        likeButton.click(() => {
+            gtag(
+                'event',
+                'x_click',
+                {
+                    event_category: 'tr',
+                    event_label: 'btn_like',
+                },
+            );
+
+            likeCountRegular += 1;
+            likesText.html(likeCountRegular);
+            localStorage.setItem('liked', 'true');
+            likeButton.prop('disabled', true);
+        });
+
+        holidayLikeButton.click(() => {
+            gtag(
+                'event',
+                'x_click',
+                {
+                    event_category: 'tr',
+                    event_label: 'btn_like_holiday',
+                },
+            );
+
+            likeCountHoliday += 1;
+            holidayLikesText.html(likeCountHoliday);
+            localStorage.setItem('holiday-liked', 'true');
+            holidayLikeButton.prop('disabled', true);
+        });
     </script>
 </body>
 
