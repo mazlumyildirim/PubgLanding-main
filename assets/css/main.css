@@ -1334,7 +1334,7 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 1024px) {
   .tab-section__tab {
-    padding: 10px 12px;
+    padding: 14px 12px;
   }
 }
 .tab-section__tab.active {
@@ -2768,12 +2768,12 @@ body {
 }
 @media (min-width: 640px) {
   .upload-card__rule-message {
-    font-size: 21px;
+    font-size: 14px;
   }
 }
 @media (min-width: 1366px) {
   .upload-card__rule-message {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
