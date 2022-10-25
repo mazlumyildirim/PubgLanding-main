@@ -1044,28 +1044,17 @@ button.swiper-pagination-bullet {
   display: flex;
   align-self: center;
   justify-content: center;
-  width: 32px;
   height: 50px;
-  padding-inline: 10px;
-  border-right: 1px solid #414141;
-}
-@media (min-width: 640px) {
-  .logo {
-    width: 72px;
-    height: 70px;
-  }
+  padding-right: 10px;
+  padding-left: 20px;
 }
 @media (min-width: 820px) {
   .logo {
-    width: 72px;
-    height: 70px;
     padding-inline: 18px;
   }
 }
 @media (min-width: 1024px) {
   .logo {
-    width: 86px;
-    height: 100px;
     padding-inline: 30px;
   }
 }
@@ -1092,6 +1081,9 @@ button.swiper-pagination-bullet {
   padding-inline: 10px;
   border-right: 1px solid #414141;
   flex-shrink: 0;
+}
+.menu-item:first-child {
+  border-left: 1px solid #414141;
 }
 .menu-item:before {
   content: "";
@@ -1171,12 +1163,23 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 640px) {
   .footer {
-    max-width: calc(100% - 30px);
+    max-width: calc(100% - 40px);
   }
 }
-@media (min-width: 820px) {
+@media screen and (min-width: 820px) {
   .footer {
-    max-width: calc(100% - 140px);
+    max-width: 700px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .footer {
+    max-width: 1120px;
   }
 }
 
@@ -1333,7 +1336,7 @@ button.swiper-pagination-bullet {
     height: 300px;
   }
 }
-@media screen and (max-width: 1366px) {
+@media screen and (min-width: 1366px) {
   .tab-section__item {
     height: 360px;
   }
@@ -1608,19 +1611,6 @@ button.swiper-pagination-bullet {
   .modal-content {
     padding: 44px 56px;
     height: 450px;
-  }
-}
-.modal-content iframe {
-  height: 100%;
-}
-@media (min-width: 1024px) {
-  .modal-content iframe {
-    height: 370px;
-  }
-}
-@media (min-width: 1366px) {
-  .modal-content iframe {
-    height: 440px;
   }
 }
 
@@ -2038,6 +2028,45 @@ body {
   .landing-content {
     margin-top: -260px;
   }
+}
+
+.banners {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+@media (min-width: 820px) {
+  .banners {
+    display: block;
+  }
+}
+
+.banner-left,
+.banner-right {
+  position: absolute;
+  top: 2240px;
+}
+@media (min-width: 1024px) {
+  .banner-left,
+.banner-right {
+    top: 2700px;
+  }
+}
+@media (min-width: 1366px) {
+  .banner-left,
+.banner-right {
+    top: 3110px;
+  }
+}
+
+.banner-left {
+  left: -160px;
+}
+
+.banner-right {
+  right: -160px;
 }
 
 .hero {
