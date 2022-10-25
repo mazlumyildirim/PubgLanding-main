@@ -19,11 +19,15 @@ body {
 .custom-container {
     max-width: calc(100% - 40px);
     margin-inline: auto;
-    @include bp(phone-large) {
-        max-width: calc(100% - 30px);
+    @media screen and (min-width: 820px) {
+        max-width: 700px;
+        width: 100%;
     }
-    @include bp(tablet) {
-        max-width: calc(100% - 140px);
+    @media screen and (min-width: 1024px) {
+        max-width: 900px;
+    }
+    @media screen and (min-width: 1366px) {
+        max-width: 1120px;
     }
 }
 
@@ -63,7 +67,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 58px;
-    background: linear-gradient(180deg, rgba(47, 47, 47, 0) 0%, #2f2f2f 100%);
+    background: linear-gradient(180deg, rgba(47, 47, 47, 0) 0%, #1e1e1e 100%);
 }
 
 .swiper-wrapper {
@@ -621,40 +625,11 @@ body {
 }
 
 .upload-card-content {
-    position: absolute;
-    right: 0;
-    width: 60%;
-    height: calc(100% - 10px);
-    background: linear-gradient(112deg, #505050 6%, #1e1e1e 96%);
-    @include bp(tablet) {
-        width: 55%;
-    }
-}
-
-.upload-card-inside {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-left: 12px;
-    padding-right: 25px;
-    @include bp(phone-large) {
-        padding-left: 24px;
-        padding-right: 36px;
-    }
-    @include bp(tablet) {
-        padding-left: 50px;
-        padding-right: 65px;
-    }
-    @include bp(desktop) {
-        padding-left: 65px;
-        padding-right: 80px;
-    }
-}
-
-.upload-card {
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    margin-top: -25px;
+    background: linear-gradient(112deg, #505050 6%, #1e1e1e 96%);
+    z-index: 0;
     &:before {
         content: "";
         position: absolute;
@@ -665,15 +640,92 @@ body {
         height: calc(100% - 25px);
         background-color: transparent;
         border: 1px solid $cPrimary;
-        z-index: 1;
+        z-index: 0;
         user-select: none;
         pointer-events: none;
+        @include bp(desktop) {
+            display: none;
+        }
+    }
+    @include bp(desktop) {
+        width: calc(100% - 300px);
+        margin-top: 0;
+    }
+    @media screen and (min-width: 1366px) {
+        width: calc(100% - 360px);
+    }
+}
+
+.upload-card-inside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-inline: 24px;
+    @include bp(phone-large) {
+        padding-left: 24px;
+        padding-right: 36px;
+    }
+    @include bp(tablet) {
+        padding-left: 50px;
+        padding-right: 65px;
+    }
+    @include bp(desktop) {
+        width: 380px;
+        padding-left: 40px;
+        padding-right: 0px;
+    }
+    @media screen and (min-width: 1366px) {
+        width: 520px;
+    }
+}
+
+.upload-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include bp(desktop) {
+        flex-direction: row;
+    }
+    &:before {
+        display: none;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 30px);
+        height: calc(100% - 55px);
+        background-color: transparent;
+        border: 1px solid $cPrimary;
+        z-index: 2;
+        user-select: none;
+        pointer-events: none;
+        @include bp(desktop) {
+            display: block;
+        }
     }
     &__image {
-        width: 40%;
+        width: 100%;
         object-fit: contain;
-        @include bp(tablet) {
-            width: 45%;
+        z-index: 1;
+        &.desktop {
+            display: none;
+            @include bp(desktop) {
+                display: block;
+            }
+        }
+        &.mobile {
+            display: block;
+            @include bp(desktop) {
+                display: none;
+            }
+        }
+        @include bp(desktop) {
+            width: 300px;
+        }
+        @media screen and (min-width: 1366px) {
+            width: 360px;
         }
     }
     &__rule {
@@ -693,16 +745,16 @@ body {
         }
     }
     &__rule-message {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 12px;
         font-family: "AgencyFB";
         font-style: normal;
         line-height: 1.3;
         @include bp(phone-large) {
-            font-size: 21px;
+            font-size: 16px;
         }
-        @include bp(desktop-up) {
-            font-size: 24px;
+        @media screen and (min-width: 1366px) {
+            font-size: 21px;
         }
     }
 }
@@ -711,21 +763,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 12px;
-    margin-bottom: 0px;
+    width: 100%;
+    padding-top: 40px;
+    margin-bottom: 20px;
     @media screen and (min-width: 370px) {
-        padding-top: 20px;
-        margin-bottom: 20px;
+        width: calc(100% - 60px);
+        margin-left: 30px;
     }
     @include bp(tablet) {
         padding-top: 50px;
     }
     @include bp(desktop) {
-        padding-top: 100px;
+        padding-top: 50px;
         margin-bottom: 32px;
     }
     &__element {
-        display: none;
         align-items: center;
         @include bp(phone-large) {
             display: block;
@@ -739,15 +791,15 @@ body {
         object-fit: contain;
         margin-bottom: 8px;
         @include bp(desktop-up) {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
         }
     }
     &__text {
         font-family: "AgencyFB";
-        font-size: 16px;
+        font-size: 14px;
         @include bp(desktop-up) {
-            font-size: 24px;
+            font-size: 22px;
         }
     }
 }
@@ -774,8 +826,9 @@ body {
         padding: 20px 16px;
     }
     @include bp(desktop-up) {
-        font-size: 36px;
-        padding: 32px 16px;
+        font-size: 32px;
+        padding: 24px 16px;
+        margin-top: 24px;
     }
 }
 
@@ -827,8 +880,14 @@ body {
         font-size: 12px;
         margin-top: 8px;
         transition: opacity 0.2s;
-        @include bp(phone-large) {
-            font-size: 26px;
+        @include bp(tablet) {
+            font-size: 16px;
+        }
+        @include bp(desktop) {
+            font-size: 18px;
+        }
+        @media screen and (min-width: 1366px) {
+            font-size: 20px;
         }
     }
     &__image {
@@ -941,8 +1000,14 @@ body {
 .view-description {
     font-family: "AgencyFB";
     font-size: 12px;
-    @include bp(phone-large) {
-        font-size: 26px;
+    @include bp(tablet) {
+        font-size: 18px;
+    }
+    @include bp(desktop) {
+        font-size: 20px;
+    }
+    @media screen and (min-width: 1366px) {
+        font-size: 22px;
     }
 }
 
