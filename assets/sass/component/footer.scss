@@ -1,27 +1,30 @@
 @import '../variables.scss';
-
-.footer{
-  background-color: $cBackground50;
-  margin-inline: auto;
-
-  @include bp(phone-large) {
-    max-width: calc(100% - 30px);
-  }
-
-  @include bp(tablet) {
-      max-width: calc(100% - 140px);
-  }
+.footer {
+    background-color: $cBackground50;
+    margin-inline: auto;
+    @include bp(phone-large) {
+        max-width: calc(100% - 40px);
+    }
+    @media screen and (min-width: 820px) {
+        max-width: 700px;
+        width: 100%;
+    }
+    @media screen and (min-width: 1024px) {
+        max-width: 900px;
+    }
+    @media screen and (min-width: 1366px) {
+        max-width: 1120px;
+    }
 }
 
 .footer-container {
-  padding: 5px 10px;
+    padding: 5px 10px;
 }
 
 .footer-content {
-  width: 100%;
-  object-fit: contain;
-
-  @include bp(tablet) {
-    padding-inline: 15px;
-  }
+    width: 100%;
+    object-fit: contain;
+    @include bp(tablet) {
+        padding-inline: 15px;
+    }
 }

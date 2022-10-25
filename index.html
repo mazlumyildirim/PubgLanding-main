@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PUBG MOBILE - Galata kulesi</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -42,6 +42,10 @@
         </hero>
         <div class="custom-container">
             <div class="landing-content">
+                <div class="banners">
+                    <img class="banner-left" alt="banner image" src="./assets/images/banner-left.jpg" />
+                    <img class="banner-right" alt="banner image" src="./assets/images/banner-right.jpg" />
+                </div>
                 <div class="tab-section section" id="section-1">
                     <img src="./assets/images/ghost/tab-ghost-text.png" alt="" class="tab-section-ghost-text">
                     <div class="tab-section-top">
@@ -433,9 +437,7 @@
                     </div>
                 </div>
                 <div class="modal-content">
-                    <p class="modal-description-text">Sophia bir zamanlar bir kaçakçı şebekesinin elebaşıydı. Doğru ücret karşılığında bulup getiremeyeceği şey yoktu. Yakın zamanda gizemli bir müşteri Sophia'ya geldi ve onu uzak bir adadaki bir göreve gönderdi. Gizemli adam, Sophia'ya
-                        bir kişinin adada onunla buluşacağını söyledi. Takas tamamlanmasına rağmen diğer taraf, Sophia'nın ekibini pusuya düşürdü. Verilen çok büyük kayıpların ardından Sophia'nın ekibi dağıldı. Sophia beladan kaçacak bir tip değildir.
-                        İntikamını almak için ipuçlarını takip etmeye başladı.</p>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4B8r1K4BPXW5S_ct80X6jhL178GScYZSjf1N20Hyx1fnN5g/viewform?embedded=true" width="100%" height="450px" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
                 </div>
                 <div class="modal-footer">
                     <button onclick="closeModal()" class="message-done">İŞLEM TAMAM!</button>
@@ -459,13 +461,6 @@
                 <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
             </div>
             <div class="modal-activity-content">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
-                <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
                 <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
                 <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
                 <img src="./assets/images/activity-bg.jpg" alt="" class="modal-activity-image">
@@ -579,7 +574,8 @@
 
         var swiper = new Swiper('.jsActivitySlider', {
             effect: 'coverflow',
-            loop: true,
+            loop: false,
+            initialSlide: 2,
             centeredSlides: true,
             slidesPerView: 3,
             keyboardControl: true,
@@ -668,27 +664,29 @@
             });
         });
         // ======
-        const themeSongElement = document.querySelectorAll('.theme-song-item');
-        const modalThemeSongElement = document.querySelectorAll('.modal-theme-song-item');
+        // Update
+        // Teme sarkilari eklenince bu js alani yorum satirindan cikarilacak
+        // const themeSongElement = document.querySelectorAll('.theme-song-item');
+        // const modalThemeSongElement = document.querySelectorAll('.modal-theme-song-item');
 
-        themeSongElement.forEach((themeSongItem, index) => {
-            themeSongItem.setAttribute('data-target', 'song-item-' + index)
-        })
+        // themeSongElement.forEach((themeSongItem, index) => {
+        //     themeSongItem.setAttribute('data-target', 'song-item-' + index)
+        // })
 
-        modalThemeSongElement.forEach((themeSongElm, index) => {
-            themeSongElm.setAttribute('id', 'song-item-' + index)
-        })
+        // modalThemeSongElement.forEach((themeSongElm, index) => {
+        //     themeSongElm.setAttribute('id', 'song-item-' + index)
+        // })
 
-        themeSongElement.forEach(themeSongItem => {
-            themeSongItem.addEventListener("click", () => {
-                modalThemeSongElement.forEach(modalThemeSongItem => {
-                    modalThemeSongItem.classList.remove("active");
-                });
-                const activeElementData = themeSongItem.getAttribute('data-target');
-                document.getElementById(activeElementData).classList.add('active');
-                openThemeSongModal();
-            });
-        });
+        // themeSongElement.forEach(themeSongItem => {
+        //     themeSongItem.addEventListener("click", () => {
+        //         modalThemeSongElement.forEach(modalThemeSongItem => {
+        //             modalThemeSongItem.classList.remove("active");
+        //         });
+        //         const activeElementData = themeSongItem.getAttribute('data-target');
+        //         document.getElementById(activeElementData).classList.add('active');
+        //         openThemeSongModal();
+        //     });
+        // });
 
         const audio = new Audio('./assets/audio/audio.ogg');
 

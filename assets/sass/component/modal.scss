@@ -175,15 +175,6 @@
         padding: 44px 56px;
         height: 450px;
     }
-    iframe {
-        height: 100%;
-        @include bp(desktop) {
-            height: 370px;
-        }
-        @include bp(desktop-up) {
-            height: 440px;
-        }
-    }
 }
 
 .modal-description-text {

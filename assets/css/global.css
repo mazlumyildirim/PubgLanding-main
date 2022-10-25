@@ -71,6 +71,45 @@ body {
   }
 }
 
+.banners {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+@media (min-width: 820px) {
+  .banners {
+    display: block;
+  }
+}
+
+.banner-left,
+.banner-right {
+  position: absolute;
+  top: 2240px;
+}
+@media (min-width: 1024px) {
+  .banner-left,
+.banner-right {
+    top: 2700px;
+  }
+}
+@media (min-width: 1366px) {
+  .banner-left,
+.banner-right {
+    top: 3110px;
+  }
+}
+
+.banner-left {
+  left: -160px;
+}
+
+.banner-right {
+  right: -160px;
+}
+
 .hero {
   position: relative;
   width: 100vw;
