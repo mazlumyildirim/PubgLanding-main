@@ -1580,7 +1580,6 @@ button.swiper-pagination-bullet {
 .modal-content {
   position: relative;
   padding: 15px 20px;
-  background-color: #363e4d;
   box-shadow: inset 3px 4px 33px #485366;
   overflow-y: scroll;
   z-index: 1;
@@ -1937,12 +1936,14 @@ button.swiper-pagination-bullet {
 .modal-form__item-input {
   width: 100%;
   padding: 12px 12px;
+  display: block;
   font-family: "League Gothic";
   color: #FFFFFF;
   background-color: #363E4D;
   outline: none;
   border: none;
   font-size: 16px;
+  text-decoration: none;
 }
 @media (min-width: 640px) {
   .modal-form__item-input {
@@ -2004,6 +2005,19 @@ body {
   .custom-container {
     max-width: 1120px;
   }
+}
+
+.muted-sound-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.muted-sound-overlay.hide {
+  z-index: -1;
+  user-select: none;
 }
 
 .landing-content {
@@ -3037,9 +3051,10 @@ body {
 
 .activity-element {
   opacity: 0;
+  width: 125px;
+  cursor: pointer;
   pointer-events: none;
   transition: all 0.3s;
-  width: 125px;
 }
 .activity-element.scale img {
   position: fixed;
@@ -3101,6 +3116,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 60%;
+  height: 0;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3108,6 +3124,10 @@ body {
   z-index: 1;
 }
 
+.activity-slider-button-next,
+.activity-slider-button-prev {
+  cursor: pointer;
+}
 @media (min-width: 640px) {
   .activity-slider-button-next,
 .activity-slider-button-prev {

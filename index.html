@@ -16,6 +16,7 @@
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxx"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -58,6 +59,7 @@
                     <img class="banner-left" alt="banner image" src="./assets/images/banner-left.jpg" />
                     <img class="banner-right" alt="banner image" src="./assets/images/banner-right.jpg" />
                 </div>
+
                 <div class="tab-section section" id="section-1">
                     <img src="./assets/images/ghost/tab-ghost-text.png" alt="" class="tab-section-ghost-text">
                     <div class="tab-section-top">
@@ -84,6 +86,7 @@
                     <div class="tab-section__wrapper">
                         <div class="tab-section-container">
                             <div class="tab-section__elements">
+                                <div class="muted-sound-overlay js-muted-overlay"></div>
                                 <div class="tab-section__item active js-tab-content" id="tab-0">
                                     <iframe src="https://drive.google.com/file/d/16x20N8ASRtig3yBjDvZLUA5Fz7QKHLZA/preview" class="tab-section__item-video" style="width: 100%; height: 100%;" allow="autoplay">
                                     </iframe>
@@ -153,6 +156,7 @@
                     </div>
                     <div class="intro-content">
                         <div class="intro-player">
+                            <div class="muted-sound-overlay js-muted-overlay"></div>
                             <div class="intro-shapes">
                                 <img src="./assets/icons/visa.svg" alt="" class="intro-shape-visa">
                                 <img src="./assets/icons/stamp.svg" alt="" class="intro-shape-stamp">
@@ -264,6 +268,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="section upload-block" id="section-3">
                     <div class="upload-block__head">
                         <h3 class="upload-block__title">
@@ -389,7 +394,104 @@
                     </div>
                 </div>
                 <div class="modal-content">
-<iframe id="JotFormIFrame-222977215095967" title="Form 2" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222977215095967" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe> <script type="text/javascript"> var ifr = document.getElementById("JotFormIFrame-222977215095967"); if (ifr) { var src = ifr.src; var iframeParams = []; if (window.location.href && window.location.href.indexOf("?") > -1) { iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&')); } if (src && src.indexOf("?") > -1) { iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&")); src = src.substr(0, src.indexOf("?")) } iframeParams.push("isIframeEmbed=1"); ifr.src = src + "?" + iframeParams.join('&'); } window.handleIFrameMessage = function(e) { if (typeof e.data === 'object') { return; } var args = e.data.split(":"); if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); } if (!iframe) { return; } switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; case "loadScript": if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; } var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; } var script = document.createElement('script'); script.src = src; script.type = 'text/javascript'; document.body.appendChild(script); break; case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen(); else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen(); else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen(); else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen(); else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; window.isPermitted = function(originUrl, whitelisted_domains) { var url = document.createElement('a'); url.href = originUrl; var hostname = url.hostname; var result = false; if( typeof hostname !== 'undefined' ) { whitelisted_domains.forEach(function(element) { if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) { result = true; } }); return result; } }; if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); } </script>
+                    <iframe id="JotFormIFrame-222977215095967" title="Form 2" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222977215095967" frameborder="0" style=" min-width: 100%; height:539px; border:none;"
+                        scrolling="no"> </iframe>
+                    <script type="text/javascript">
+                        var ifr = document.getElementById("JotFormIFrame-222977215095967");
+                        if (ifr) {
+                            var src = ifr.src;
+                            var iframeParams = [];
+                            if (window.location.href && window.location.href.indexOf("?") > -1) {
+                                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                            }
+                            if (src && src.indexOf("?") > -1) {
+                                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                                src = src.substr(0, src.indexOf("?"))
+                            }
+                            iframeParams.push("isIframeEmbed=1");
+                            ifr.src = src + "?" + iframeParams.join('&');
+                        }
+                        window.handleIFrameMessage = function(e) {
+                            if (typeof e.data === 'object') {
+                                return;
+                            }
+                            var args = e.data.split(":");
+                            if (args.length > 2) {
+                                iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
+                            } else {
+                                iframe = document.getElementById("JotFormIFrame");
+                            }
+                            if (!iframe) {
+                                return;
+                            }
+                            switch (args[0]) {
+                                case "scrollIntoView":
+                                    iframe.scrollIntoView();
+                                    break;
+                                case "setHeight":
+                                    iframe.style.height = args[1] + "px";
+                                    break;
+                                case "collapseErrorPage":
+                                    if (iframe.clientHeight > window.innerHeight) {
+                                        iframe.style.height = window.innerHeight + "px";
+                                    }
+                                    break;
+                                case "reloadPage":
+                                    window.location.reload();
+                                    break;
+                                case "loadScript":
+                                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                                        break;
+                                    }
+                                    var src = args[1];
+                                    if (args.length > 3) {
+                                        src = args[1] + ':' + args[2];
+                                    }
+                                    var script = document.createElement('script');
+                                    script.src = src;
+                                    script.type = 'text/javascript';
+                                    document.body.appendChild(script);
+                                    break;
+                                case "exitFullscreen":
+                                    if (window.document.exitFullscreen) window.document.exitFullscreen();
+                                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+                                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+                                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+                                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+                                    break;
+                            }
+                            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+                            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                                var urls = {
+                                    "docurl": encodeURIComponent(document.URL),
+                                    "referrer": encodeURIComponent(document.referrer)
+                                };
+                                iframe.contentWindow.postMessage(JSON.stringify({
+                                    "type": "urls",
+                                    "value": urls
+                                }), "*");
+                            }
+                        };
+                        window.isPermitted = function(originUrl, whitelisted_domains) {
+                            var url = document.createElement('a');
+                            url.href = originUrl;
+                            var hostname = url.hostname;
+                            var result = false;
+                            if (typeof hostname !== 'undefined') {
+                                whitelisted_domains.forEach(function(element) {
+                                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
+                                        result = true;
+                                    }
+                                });
+                                return result;
+                            }
+                        };
+                        if (window.addEventListener) {
+                            window.addEventListener("message", handleIFrameMessage, false);
+                        } else if (window.attachEvent) {
+                            window.attachEvent("onmessage", handleIFrameMessage);
+                        }
+                    </script>
                 </div>
                 <div class="modal-shapes">
                     <div class="modal-shapes__right">
@@ -419,7 +521,7 @@
 
                         <div class="modal-form__item">
                             <span class="modal-form__item-label">REDEMPTION URL</span>
-                            <input class="modal-form__item-input text-primary" value="http://www.pubgmobile.com/redeem" />
+                            <a href="http://www.pubgmobile.com/redeem" class="modal-form__item-input text-primary">http://www.pubgmobile.com/redeem</a>
                         </div>
                     </div>
                 </div>
@@ -442,9 +544,103 @@
                     </div>
                 </div>
                 <div class="modal-content">
-                    <iframe id="JotFormIFrame-222976909285977" title="[Imported Form] PUBG Mobile &quot;112&quot; İçerik Yarışması" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222976909285977" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe>
+                    <iframe id="JotFormIFrame-222976909285977" title="[Imported Form] PUBG Mobile &quot;112&quot; İçerik Yarışması" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222976909285977"
+                        frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no"> </iframe>
                     <script type="text/javascript">
-                    var ifr = document.getElementById("JotFormIFrame-222976909285977"); if (ifr) { var src = ifr.src; var iframeParams = []; if (window.location.href && window.location.href.indexOf("?") > -1) { iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&')); } if (src && src.indexOf("?") > -1) { iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&")); src = src.substr(0, src.indexOf("?")) } iframeParams.push("isIframeEmbed=1"); ifr.src = src + "?" + iframeParams.join('&'); } window.handleIFrameMessage = function(e) { if (typeof e.data === 'object') { return; } var args = e.data.split(":"); if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); } if (!iframe) { return; } switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; case "loadScript": if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; } var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; } var script = document.createElement('script'); script.src = src; script.type = 'text/javascript'; document.body.appendChild(script); break; case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen(); else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen(); else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen(); else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen(); else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; window.isPermitted = function(originUrl, whitelisted_domains) { var url = document.createElement('a'); url.href = originUrl; var hostname = url.hostname; var result = false; if( typeof hostname !== 'undefined' ) { whitelisted_domains.forEach(function(element) { if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) { result = true; } }); return result; } }; if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); }
+                        var ifr = document.getElementById("JotFormIFrame-222976909285977");
+                        if (ifr) {
+                            var src = ifr.src;
+                            var iframeParams = [];
+                            if (window.location.href && window.location.href.indexOf("?") > -1) {
+                                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                            }
+                            if (src && src.indexOf("?") > -1) {
+                                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                                src = src.substr(0, src.indexOf("?"))
+                            }
+                            iframeParams.push("isIframeEmbed=1");
+                            ifr.src = src + "?" + iframeParams.join('&');
+                        }
+                        window.handleIFrameMessage = function(e) {
+                            if (typeof e.data === 'object') {
+                                return;
+                            }
+                            var args = e.data.split(":");
+                            if (args.length > 2) {
+                                iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
+                            } else {
+                                iframe = document.getElementById("JotFormIFrame");
+                            }
+                            if (!iframe) {
+                                return;
+                            }
+                            switch (args[0]) {
+                                case "scrollIntoView":
+                                    iframe.scrollIntoView();
+                                    break;
+                                case "setHeight":
+                                    iframe.style.height = args[1] + "px";
+                                    break;
+                                case "collapseErrorPage":
+                                    if (iframe.clientHeight > window.innerHeight) {
+                                        iframe.style.height = window.innerHeight + "px";
+                                    }
+                                    break;
+                                case "reloadPage":
+                                    window.location.reload();
+                                    break;
+                                case "loadScript":
+                                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                                        break;
+                                    }
+                                    var src = args[1];
+                                    if (args.length > 3) {
+                                        src = args[1] + ':' + args[2];
+                                    }
+                                    var script = document.createElement('script');
+                                    script.src = src;
+                                    script.type = 'text/javascript';
+                                    document.body.appendChild(script);
+                                    break;
+                                case "exitFullscreen":
+                                    if (window.document.exitFullscreen) window.document.exitFullscreen();
+                                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+                                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+                                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+                                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+                                    break;
+                            }
+                            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+                            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                                var urls = {
+                                    "docurl": encodeURIComponent(document.URL),
+                                    "referrer": encodeURIComponent(document.referrer)
+                                };
+                                iframe.contentWindow.postMessage(JSON.stringify({
+                                    "type": "urls",
+                                    "value": urls
+                                }), "*");
+                            }
+                        };
+                        window.isPermitted = function(originUrl, whitelisted_domains) {
+                            var url = document.createElement('a');
+                            url.href = originUrl;
+                            var hostname = url.hostname;
+                            var result = false;
+                            if (typeof hostname !== 'undefined') {
+                                whitelisted_domains.forEach(function(element) {
+                                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
+                                        result = true;
+                                    }
+                                });
+                                return result;
+                            }
+                        };
+                        if (window.addEventListener) {
+                            window.addEventListener("message", handleIFrameMessage, false);
+                        } else if (window.attachEvent) {
+                            window.attachEvent("onmessage", handleIFrameMessage);
+                        }
                     </script>
                 </div>
                 <div class="modal-shapes">
@@ -684,6 +880,7 @@
 
         // themeSongElement.forEach(themeSongItem => {
         //     themeSongItem.addEventListener("click", () => {
+        //         pauseAudio();
         //         modalThemeSongElement.forEach(modalThemeSongItem => {
         //             modalThemeSongItem.classList.remove("active");
         //         });
@@ -703,6 +900,11 @@
                 .catch(() => undefined)
         }, 200);
 
+        pauseAudio = () => {
+            audio.pause();
+            document.querySelector('.sound-control').classList.add('paused')
+        }
+
         mutedSound = () => {
             const soundControl = document.querySelector('.sound-control');
             if (soundControl.classList.contains('paused')) {
@@ -721,6 +923,16 @@
             $(".js-tab-content").removeClass("active");
             $(this).addClass("active");
             $(".js-tab-content#" + target).addClass("active");
+        });
+
+        $(".js-muted-overlay").click(function() {
+            setTimeout(() => {
+                const allMutedOvarlay = document.querySelectorAll('.js-muted-overlay');
+                allMutedOvarlay.forEach((item) => {
+                    item.classList.add('hide')
+                })
+                pauseAudio();
+            }, 50)
         });
 
         $('.js-facebook-share').click((e) => {
@@ -778,7 +990,7 @@
 
         likeCountHoliday = Math.ceil(likeCountHoliday / 2);
         likeCountRegular = Math.ceil(likeCountRegular / 2);
-        
+
         const likeButton = $('#js-like');
         const holidayLikeButton = $('#js-like-holiday');
         const likesText = $('#js-like-text');
@@ -798,8 +1010,7 @@
         likeButton.click(() => {
             gtag(
                 'event',
-                'x_click',
-                {
+                'x_click', {
                     event_category: 'tr',
                     event_label: 'btn_like',
                 },
@@ -814,8 +1025,7 @@
         holidayLikeButton.click(() => {
             gtag(
                 'event',
-                'x_click',
-                {
+                'x_click', {
                     event_category: 'tr',
                     event_label: 'btn_like_holiday',
                 },
