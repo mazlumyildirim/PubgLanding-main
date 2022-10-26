@@ -100,18 +100,18 @@ body {
 .banner-left,
 .banner-right {
   position: absolute;
-  top: 2240px;
+  top: 2160px;
 }
 @media (min-width: 1024px) {
   .banner-left,
 .banner-right {
-    top: 2700px;
+    top: 2460px;
   }
 }
 @media (min-width: 1366px) {
   .banner-left,
 .banner-right {
-    top: 3110px;
+    top: 2950px;
   }
 }
 
@@ -589,12 +589,12 @@ body {
 @media (min-width: 1024px) {
   .theme-song__title {
     font-size: 48px;
+    padding-top: 140px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1366px) {
   .theme-song__title {
     font-size: 64px;
-    padding-top: 140px;
   }
 }
 .theme-song__title-ghost {
@@ -677,13 +677,14 @@ body {
 }
 @media (min-width: 640px) {
   .theme-song-list__title {
-    font-size: 36px;
+    font-size: 28px;
     margin-bottom: 0;
+    text-align: left;
   }
 }
 @media (min-width: 1024px) {
   .theme-song-list__title {
-    font-size: 64px;
+    font-size: 42px;
   }
 }
 .theme-song-list__subtitle {
@@ -695,16 +696,16 @@ body {
 }
 @media (min-width: 640px) {
   .theme-song-list__subtitle {
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
-    max-width: 240px;
+    max-width: 180px;
     margin-left: 12px;
   }
 }
 @media (min-width: 1024px) {
   .theme-song-list__subtitle {
-    font-size: 24px;
-    max-width: 290px;
+    font-size: 26px;
+    max-width: 190px;
   }
 }
 
