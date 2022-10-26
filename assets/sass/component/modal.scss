@@ -149,7 +149,9 @@
 .modal-content {
     position: relative;
     padding: 15px 20px;
+    max-height: 360px;
     box-shadow: inset 3px 4px 33px #485366;
+    background-color: #363e4d;
     overflow-y: scroll;
     z-index: 1;
     &:before {
@@ -165,6 +167,9 @@
         @include bp(desktop) {
             display: inline;
         }
+    }
+    @media screen and (min-width: 370px) {
+        max-height: 400px;
     }
     @include bp(desktop) {
         padding: 30px 40px;

@@ -1580,7 +1580,9 @@ button.swiper-pagination-bullet {
 .modal-content {
   position: relative;
   padding: 15px 20px;
+  max-height: 360px;
   box-shadow: inset 3px 4px 33px #485366;
+  background-color: #363e4d;
   overflow-y: scroll;
   z-index: 1;
 }
@@ -1598,6 +1600,11 @@ button.swiper-pagination-bullet {
 @media (min-width: 1024px) {
   .modal-content:before {
     display: inline;
+  }
+}
+@media screen and (min-width: 370px) {
+  .modal-content {
+    max-height: 400px;
   }
 }
 @media (min-width: 1024px) {
