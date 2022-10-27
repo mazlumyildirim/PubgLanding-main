@@ -162,7 +162,7 @@
         bottom: 20px;
         width: 20px;
         height: 20px;
-        background-color: #83387F;
+        background-color: #FFEAFE;
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
         @include bp(desktop) {
             display: inline;
@@ -172,11 +172,11 @@
         max-height: 400px;
     }
     @include bp(desktop) {
-        padding: 30px 40px;
+        padding: 20px;
         height: 380px;
     }
     @include bp(desktop-up) {
-        padding: 44px 56px;
+        padding: 20px;
         height: 450px;
     }
 }

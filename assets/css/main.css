@@ -1589,7 +1589,7 @@ button.swiper-pagination-bullet {
   bottom: 20px;
   width: 20px;
   height: 20px;
-  background-color: #83387F;
+  background-color: #FFEAFE;
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 @media (min-width: 1024px) {
@@ -1604,13 +1604,13 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 1024px) {
   .modal-content {
-    padding: 30px 40px;
+    padding: 20px;
     height: 380px;
   }
 }
 @media (min-width: 1365px) {
   .modal-content {
-    padding: 44px 56px;
+    padding: 20px;
     height: 450px;
   }
 }
