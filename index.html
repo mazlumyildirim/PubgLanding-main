@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
 
+
     <!-- CHANGE ID -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxx"></script>
     <script>
@@ -55,11 +56,10 @@
         </hero>
         <div class="custom-container">
             <div class="landing-content">
-                <div class="banners">
+                <div class="banners" id="banners">
                     <img class="banner-left" alt="banner image" src="./assets/images/banner-left.jpg" />
                     <img class="banner-right" alt="banner image" src="./assets/images/banner-right.jpg" />
                 </div>
-
                 <div class="tab-section section" id="section-1">
                     <img src="./assets/images/ghost/tab-ghost-text.png" alt="" class="tab-section-ghost-text">
                     <div class="tab-section-top">
@@ -745,11 +745,39 @@
         <img src="./assets/images/base/loader.gif" alt="" class="page-loader__image">
     </div>
 
-    <script src="./assets/script/main.js"></script>
     <script src="./assets/script/jquery-3.6.1.slim.js"></script>
     <script src="./assets/script/swiper-bundle.min.js"></script>
     <script>
         const api = 'http://127.0.0.1:3000';
+
+        window.onscroll = function() {
+            getWindowWidth()
+            calcStickyClass();
+        };
+
+        const banners = document.getElementById("banners");
+        const sticky = banners.offsetTop;
+        var stickyHeight = 0;
+
+        function getWindowWidth() {
+            var screenSize = $(window).width();
+            if (screenSize > 1365) {
+                this.stickyHeight = 1600;
+            } else if (screenSize > 1023) {
+                this.stickyHeight = 850;
+            } else {
+                this.stickyHeight = 730;
+            }
+        }
+
+        function calcStickyClass() {
+            console.log('size:' + stickyHeight)
+            if (window.pageYOffset > (sticky + stickyHeight)) {
+                banners.classList.add("sticky");
+            } else {
+                banners.classList.remove("sticky");
+            }
+        }
 
         document.onreadystatechange = function() {
             if (document.readyState !== "complete") {

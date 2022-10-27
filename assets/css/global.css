@@ -85,42 +85,52 @@ body {
 }
 
 .banners {
-  position: relative;
+  position: absolute;
+  top: 200px;
+  left: 0;
   width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
   display: none;
+  z-index: -1;
 }
 @media (min-width: 820px) {
   .banners {
     display: block;
   }
 }
+@media (min-width: 1024px) {
+  .banners {
+    top: 500px;
+  }
+}
+@media (min-width: 1365px) {
+  .banners {
+    top: 300px;
+  }
+}
+.banners.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -300px;
+}
+.banners.sticky .banner-left {
+  left: -290px;
+}
+.banners.sticky .banner-right {
+  right: -290px;
+}
 
 .banner-left,
 .banner-right {
   position: absolute;
-  top: 2160px;
-}
-@media (min-width: 1024px) {
-  .banner-left,
-.banner-right {
-    top: 2460px;
-  }
-}
-@media (min-width: 1366px) {
-  .banner-left,
-.banner-right {
-    top: 2950px;
-  }
+  top: 0px;
 }
 
 .banner-left {
-  left: -160px;
+  left: -250px;
 }
 
 .banner-right {
-  right: -160px;
+  right: -250px;
 }
 
 .hero {
@@ -422,7 +432,7 @@ body {
     height: 420px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .intro-player {
     width: 940px;
     height: 540px;
@@ -447,7 +457,7 @@ body {
     right: -60px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .intro-shape-stamp {
     width: 134px;
     right: -90px;
@@ -469,7 +479,7 @@ body {
     bottom: -20px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .intro-shape-visa {
     width: 240px;
     left: -100px;
@@ -592,7 +602,7 @@ body {
     padding-top: 140px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .theme-song__title {
     font-size: 64px;
   }
@@ -936,7 +946,7 @@ body {
     margin-bottom: 10px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .upload-card__rule {
     font-size: 24px;
     margin-bottom: 16px;
@@ -1001,7 +1011,7 @@ body {
   object-fit: contain;
   margin-bottom: 8px;
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .upload-card-info__icon {
     width: 32px;
     height: 32px;
@@ -1011,7 +1021,7 @@ body {
   font-family: "AgencyFB";
   font-size: 14px;
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .upload-card-info__text {
     font-size: 22px;
   }
@@ -1043,7 +1053,7 @@ body {
     padding: 20px 16px;
   }
 }
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
   .button-upload {
     font-size: 32px;
     padding: 24px 16px;
