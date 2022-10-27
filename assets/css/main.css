@@ -1159,28 +1159,6 @@ button.swiper-pagination-bullet {
 
 .footer {
   background-color: #232323;
-  margin-inline: auto;
-}
-@media (min-width: 640px) {
-  .footer {
-    max-width: calc(100% - 40px);
-  }
-}
-@media screen and (min-width: 820px) {
-  .footer {
-    max-width: 700px;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .footer {
-    max-width: 900px;
-  }
-}
-@media screen and (min-width: 1366px) {
-  .footer {
-    max-width: 1120px;
-  }
 }
 
 .footer-container {
@@ -1190,10 +1168,27 @@ button.swiper-pagination-bullet {
 .footer-content {
   width: 100%;
   object-fit: contain;
+  margin-inline: auto;
+  display: block;
 }
-@media (min-width: 820px) {
+@media (min-width: 640px) {
   .footer-content {
-    padding-inline: 15px;
+    max-width: calc(100% - 40px);
+  }
+}
+@media screen and (min-width: 820px) {
+  .footer-content {
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer-content {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .footer-content {
+    max-width: 1120px;
   }
 }
 
@@ -1439,7 +1434,7 @@ button.swiper-pagination-bullet {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #cfd9ea;
+  background: #FFEAFE;
   padding-bottom: 20px;
   border-radius: 3px;
   transition: all 0.3s;
@@ -1581,8 +1576,8 @@ button.swiper-pagination-bullet {
   position: relative;
   padding: 15px 20px;
   max-height: 360px;
-  box-shadow: inset 3px 4px 33px #485366;
-  background-color: #363e4d;
+  box-shadow: inset 3px 4px 33px #7c3379;
+  background-color: #83387F;
   overflow-y: scroll;
   z-index: 1;
 }
@@ -1594,7 +1589,7 @@ button.swiper-pagination-bullet {
   bottom: 20px;
   width: 20px;
   height: 20px;
-  background-color: #cfd9ea;
+  background-color: #83387F;
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 @media (min-width: 1024px) {
@@ -1669,7 +1664,7 @@ button.swiper-pagination-bullet {
   width: 80px;
   height: 260px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__left:after {
   content: "";
@@ -1679,7 +1674,7 @@ button.swiper-pagination-bullet {
   width: 80px;
   height: 160px;
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__left-line {
   position: absolute;
@@ -1703,7 +1698,7 @@ button.swiper-pagination-bullet {
   width: 230px;
   height: 60px;
   clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__bottom:after {
   content: "";
@@ -1713,7 +1708,7 @@ button.swiper-pagination-bullet {
   width: 400px;
   height: 60px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__right {
   position: absolute;
@@ -1729,7 +1724,7 @@ button.swiper-pagination-bullet {
   width: 130px;
   height: 160px;
   clip-path: polygon(0 0, 100% 38%, 100% 100%, 0 100%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__right:after {
   content: "";
@@ -1739,7 +1734,7 @@ button.swiper-pagination-bullet {
   width: 80px;
   height: 260px;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  background: #cfd9ea;
+  background: #FFEAFE;
 }
 .modal-shapes__right-line {
   position: absolute;
@@ -1946,7 +1941,7 @@ button.swiper-pagination-bullet {
   display: block;
   font-family: "League Gothic";
   color: #FFFFFF;
-  background-color: #363E4D;
+  background-color: #83387F;
   outline: none;
   border: none;
   font-size: 16px;
@@ -2052,52 +2047,37 @@ body {
 }
 
 .banners {
+  display: none;
   position: absolute;
-  top: 200px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  display: none;
   z-index: -1;
+  pointer-events: none;
 }
 @media (min-width: 820px) {
   .banners {
     display: block;
   }
 }
-@media (min-width: 1024px) {
-  .banners {
-    top: 500px;
-  }
-}
-@media (min-width: 1365px) {
-  .banners {
-    top: 300px;
-  }
-}
-.banners.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: -300px;
-}
-.banners.sticky .banner-left {
-  left: -290px;
-}
-.banners.sticky .banner-right {
-  right: -290px;
-}
 
 .banner-left,
 .banner-right {
   position: absolute;
-  top: 0px;
+  width: 250px;
+  height: 100%;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
 }
 
 .banner-left {
   left: -250px;
+  background-image: url("../images/banner-left.jpg");
 }
 
 .banner-right {
   right: -250px;
+  background-image: url("../images/banner-right.jpg");
 }
 
 .hero {

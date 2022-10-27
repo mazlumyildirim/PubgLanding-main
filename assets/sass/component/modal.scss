@@ -30,7 +30,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: #cfd9ea;
+    background: #FFEAFE;
     padding-bottom: 20px;
     border-radius: 3px;
     transition: all .3s;
@@ -150,8 +150,8 @@
     position: relative;
     padding: 15px 20px;
     max-height: 360px;
-    box-shadow: inset 3px 4px 33px #485366;
-    background-color: #363e4d;
+    box-shadow: inset 3px 4px 33px #7c3379;
+    background-color: #83387F;
     overflow-y: scroll;
     z-index: 1;
     &:before {
@@ -162,7 +162,7 @@
         bottom: 20px;
         width: 20px;
         height: 20px;
-        background-color: #cfd9ea;
+        background-color: #83387F;
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
         @include bp(desktop) {
             display: inline;
@@ -220,7 +220,7 @@
             width: 80px;
             height: 260px;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
         &:after {
             content: "";
@@ -230,7 +230,7 @@
             width: 80px;
             height: 160px;
             clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
     }
     &__left-line {
@@ -254,7 +254,7 @@
             width: 230px;
             height: 60px;
             clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
         &:after {
             content: "";
@@ -264,7 +264,7 @@
             width: 400px;
             height: 60px;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
     }
     &__right {
@@ -280,7 +280,7 @@
             width: 130px;
             height: 160px;
             clip-path: polygon(0 0, 100% 38%, 100% 100%, 0 100%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
         &:after {
             content: "";
@@ -290,7 +290,7 @@
             width: 80px;
             height: 260px;
             clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-            background: #cfd9ea;
+            background: #FFEAFE;
         }
     }
     &__right-line {
@@ -462,7 +462,7 @@
         display: block;
         font-family: 'League Gothic';
         color: $cNeutral00;
-        background-color: #363E4D;
+        background-color: #83387F;
         outline: none;
         border: none;
         font-size: 16px;

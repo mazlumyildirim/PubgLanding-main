@@ -63,55 +63,35 @@ body {
 }
 
 .banners {
+    display: none;
     position: absolute;
-    top: 200px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    display: none;
     z-index: -1;
+    pointer-events: none;
     @include bp(tablet) {
         display: block;
-    }
-    @include bp(desktop) {
-        top: 500px;
-    }
-    @include bp(desktop-up) {
-        top: 300px;
-    }
-    &.sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: -300px;
-        @include bp(desktop-up) {
-            // top: -250px;
-        }
-        .banner-left {
-            left: -290px;
-        }
-        .banner-right {
-            right: -290px;
-        }
     }
 }
 
 .banner-left,
 .banner-right {
     position: absolute;
-    top: 0px;
-    // @include bp(desktop) {
-    //     top: 280px;
-    // }
-    // @include bp(desktop-up) {
-    //     top: 300px;
-    // }
+    width: 250px;
+    height: 100%;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
 }
 
 .banner-left {
     left: -250px;
+    background-image: url("../images/banner-left.jpg");
 }
 
 .banner-right {
     right: -250px;
+    background-image: url("../images/banner-right.jpg");
 }
 
 .hero {
