@@ -879,28 +879,28 @@
         // ======
         // Update
         // Teme sarkilari eklenince bu js alani yorum satirindan cikarilacak
-        const themeSongElement = document.querySelectorAll('.theme-song-item');
-        const modalThemeSongElement = document.querySelectorAll('.modal-theme-song-item');
+        // const themeSongElement = document.querySelectorAll('.theme-song-item');
+        // const modalThemeSongElement = document.querySelectorAll('.modal-theme-song-item');
 
-        themeSongElement.forEach((themeSongItem, index) => {
-            themeSongItem.setAttribute('data-target', 'song-item-' + index)
-        })
+        // themeSongElement.forEach((themeSongItem, index) => {
+        //     themeSongItem.setAttribute('data-target', 'song-item-' + index)
+        // })
 
-        modalThemeSongElement.forEach((themeSongElm, index) => {
-            themeSongElm.setAttribute('id', 'song-item-' + index)
-        })
+        // modalThemeSongElement.forEach((themeSongElm, index) => {
+        //     themeSongElm.setAttribute('id', 'song-item-' + index)
+        // })
 
-        themeSongElement.forEach(themeSongItem => {
-            themeSongItem.addEventListener("click", () => {
-                pauseAudio();
-                modalThemeSongElement.forEach(modalThemeSongItem => {
-                    modalThemeSongItem.classList.remove("active");
-                });
-                const activeElementData = themeSongItem.getAttribute('data-target');
-                document.getElementById(activeElementData).classList.add('active');
-                openThemeSongModal();
-            });
-        });
+        // themeSongElement.forEach(themeSongItem => {
+        //     themeSongItem.addEventListener("click", () => {
+        //         pauseAudio();
+        //         modalThemeSongElement.forEach(modalThemeSongItem => {
+        //             modalThemeSongItem.classList.remove("active");
+        //         });
+        //         const activeElementData = themeSongItem.getAttribute('data-target');
+        //         document.getElementById(activeElementData).classList.add('active');
+        //         openThemeSongModal();
+        //     });
+        // });
 
         const audio = new Audio('./assets/audio/audio.ogg');
 
