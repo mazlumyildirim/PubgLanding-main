@@ -27,6 +27,7 @@
     position: absolute;
     width: 100%;
     max-width: calc(100% - 60px);
+    max-height: calc(100% - 60px);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -35,8 +36,9 @@
     border-radius: 3px;
     transition: all .3s;
     display: none;
+    flex-direction: column;
     &.active {
-        display: block;
+        display: flex;
     }
     @include bp(desktop) {
         max-width: calc(100% - 200px);
@@ -146,13 +148,18 @@
     }
 }
 
+.modal-inner {
+    display: contents;
+    max-height: 400px;
+}
+
 .modal-content {
     position: relative;
     padding: 15px 20px;
-    max-height: 360px;
     box-shadow: inset 3px 4px 33px #7c3379;
     background-color: #83387F;
     overflow-y: scroll;
+    max-height: 360px;
     z-index: 1;
     &:before {
         display: none;
@@ -169,15 +176,13 @@
         }
     }
     @media screen and (min-width: 370px) {
-        max-height: 400px;
+        // max-height: 400px;
     }
     @include bp(desktop) {
         padding: 20px;
-        height: 380px;
     }
     @include bp(desktop-up) {
         padding: 20px;
-        height: 450px;
     }
 }
 

@@ -372,270 +372,276 @@
         <div class="modal-overlay"></div>
         <div class="modal-wrapper">
             <div class="modal jsModalElement" id="draw">
-                <div class="modal-head">
-                    <div class="modal-title">ÇEKİLİŞE KATIL!</div>
-                    <div class="modal-close" onclick="closeModal()">
-                        <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
+                <div class="modal-inner">
+                    <div class="modal-head">
+                        <div class="modal-title">ÇEKİLİŞE KATIL!</div>
+                        <div class="modal-close" onclick="closeModal()">
+                            <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-content">
-                    <iframe id="JotFormIFrame-222977215095967" title="Form 2" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222977215095967" frameborder="0" style=" max-width: 100%; width: 100%; height:539px; border:none;"
-                        scrolling="no"> </iframe>
-                    <script type="text/javascript">
-                        var ifr = document.getElementById("JotFormIFrame-222977215095967");
-                        if (ifr) {
-                            var src = ifr.src;
-                            var iframeParams = [];
-                            if (window.location.href && window.location.href.indexOf("?") > -1) {
-                                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                    <div class="modal-content">
+                        <iframe id="JotFormIFrame-222977215095967" title="Form 2" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222977215095967" frameborder="0" style=" max-width: 100%; width: 100%; height:539px; border:none;"
+                            scrolling="no"> </iframe>
+                        <script type="text/javascript">
+                            var ifr = document.getElementById("JotFormIFrame-222977215095967");
+                            if (ifr) {
+                                var src = ifr.src;
+                                var iframeParams = [];
+                                if (window.location.href && window.location.href.indexOf("?") > -1) {
+                                    iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                                }
+                                if (src && src.indexOf("?") > -1) {
+                                    iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                                    src = src.substr(0, src.indexOf("?"))
+                                }
+                                iframeParams.push("isIframeEmbed=1");
+                                ifr.src = src + "?" + iframeParams.join('&');
                             }
-                            if (src && src.indexOf("?") > -1) {
-                                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                                src = src.substr(0, src.indexOf("?"))
-                            }
-                            iframeParams.push("isIframeEmbed=1");
-                            ifr.src = src + "?" + iframeParams.join('&');
-                        }
-                        window.handleIFrameMessage = function(e) {
-                            if (typeof e.data === 'object') {
-                                return;
-                            }
-                            var args = e.data.split(":");
-                            if (args.length > 2) {
-                                iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
-                            } else {
-                                iframe = document.getElementById("JotFormIFrame");
-                            }
-                            if (!iframe) {
-                                return;
-                            }
-                            switch (args[0]) {
-                                case "scrollIntoView":
-                                    iframe.scrollIntoView();
-                                    break;
-                                case "setHeight":
-                                    iframe.style.height = args[1] + "px";
-                                    break;
-                                case "collapseErrorPage":
-                                    if (iframe.clientHeight > window.innerHeight) {
-                                        iframe.style.height = window.innerHeight + "px";
-                                    }
-                                    break;
-                                case "reloadPage":
-                                    window.location.reload();
-                                    break;
-                                case "loadScript":
-                                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                            window.handleIFrameMessage = function(e) {
+                                if (typeof e.data === 'object') {
+                                    return;
+                                }
+                                var args = e.data.split(":");
+                                if (args.length > 2) {
+                                    iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
+                                } else {
+                                    iframe = document.getElementById("JotFormIFrame");
+                                }
+                                if (!iframe) {
+                                    return;
+                                }
+                                switch (args[0]) {
+                                    case "scrollIntoView":
+                                        iframe.scrollIntoView();
                                         break;
-                                    }
-                                    var src = args[1];
-                                    if (args.length > 3) {
-                                        src = args[1] + ':' + args[2];
-                                    }
-                                    var script = document.createElement('script');
-                                    script.src = src;
-                                    script.type = 'text/javascript';
-                                    document.body.appendChild(script);
-                                    break;
-                                case "exitFullscreen":
-                                    if (window.document.exitFullscreen) window.document.exitFullscreen();
-                                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                                    break;
+                                    case "setHeight":
+                                        iframe.style.height = args[1] + "px";
+                                        break;
+                                    case "collapseErrorPage":
+                                        if (iframe.clientHeight > window.innerHeight) {
+                                            iframe.style.height = window.innerHeight + "px";
+                                        }
+                                        break;
+                                    case "reloadPage":
+                                        window.location.reload();
+                                        break;
+                                    case "loadScript":
+                                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                                            break;
+                                        }
+                                        var src = args[1];
+                                        if (args.length > 3) {
+                                            src = args[1] + ':' + args[2];
+                                        }
+                                        var script = document.createElement('script');
+                                        script.src = src;
+                                        script.type = 'text/javascript';
+                                        document.body.appendChild(script);
+                                        break;
+                                    case "exitFullscreen":
+                                        if (window.document.exitFullscreen) window.document.exitFullscreen();
+                                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+                                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+                                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+                                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+                                        break;
+                                }
+                                var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+                                if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                                    var urls = {
+                                        "docurl": encodeURIComponent(document.URL),
+                                        "referrer": encodeURIComponent(document.referrer)
+                                    };
+                                    iframe.contentWindow.postMessage(JSON.stringify({
+                                        "type": "urls",
+                                        "value": urls
+                                    }), "*");
+                                }
+                            };
+                            window.isPermitted = function(originUrl, whitelisted_domains) {
+                                var url = document.createElement('a');
+                                url.href = originUrl;
+                                var hostname = url.hostname;
+                                var result = false;
+                                if (typeof hostname !== 'undefined') {
+                                    whitelisted_domains.forEach(function(element) {
+                                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
+                                            result = true;
+                                        }
+                                    });
+                                    return result;
+                                }
+                            };
+                            if (window.addEventListener) {
+                                window.addEventListener("message", handleIFrameMessage, false);
+                            } else if (window.attachEvent) {
+                                window.attachEvent("onmessage", handleIFrameMessage);
                             }
-                            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                                var urls = {
-                                    "docurl": encodeURIComponent(document.URL),
-                                    "referrer": encodeURIComponent(document.referrer)
-                                };
-                                iframe.contentWindow.postMessage(JSON.stringify({
-                                    "type": "urls",
-                                    "value": urls
-                                }), "*");
-                            }
-                        };
-                        window.isPermitted = function(originUrl, whitelisted_domains) {
-                            var url = document.createElement('a');
-                            url.href = originUrl;
-                            var hostname = url.hostname;
-                            var result = false;
-                            if (typeof hostname !== 'undefined') {
-                                whitelisted_domains.forEach(function(element) {
-                                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                                        result = true;
-                                    }
-                                });
-                                return result;
-                            }
-                        };
-                        if (window.addEventListener) {
-                            window.addEventListener("message", handleIFrameMessage, false);
-                        } else if (window.attachEvent) {
-                            window.attachEvent("onmessage", handleIFrameMessage);
-                        }
-                    </script>
-                </div>
-                <div class="modal-shapes">
-                    <div class="modal-shapes__right">
-                        <div class="modal-shapes__right-line"></div>
+                        </script>
                     </div>
-                    <div class="modal-shapes__left">
-                        <div class="modal-shapes__left-line"></div>
+                    <div class="modal-shapes">
+                        <div class="modal-shapes__right">
+                            <div class="modal-shapes__right-line"></div>
+                        </div>
+                        <div class="modal-shapes__left">
+                            <div class="modal-shapes__left-line"></div>
+                        </div>
+                        <div class="modal-shapes__bottom"></div>
                     </div>
-                    <div class="modal-shapes__bottom"></div>
                 </div>
             </div>
 
             <div class="modal jsModalElement modal-second" id="share">
-                <div class="modal-head">
-                    <div class="modal-title">PAYLAŞ, ÖDÜLLERİ KAP!</div>
-                    <div class="modal-close" onclick="closeModal()">
-                        <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
-                    </div>
-                </div>
-                <div class="modal-content">
-                    <p class="modal-form-text">PAYLAŞIMIN İÇİN TEŞEKKÜRLER. İŞTE BİZDEN SANA BİRKAÇ HEDİYE!</p>
-                    <div class="modal-form">
-                        <div class="modal-form__item">
-                            <span class="modal-form__item-label">REDEMPTION CODE</span>
-                            <input class="modal-form__item-input" value="112" />
+                <div class="modal-inner">
+                    <div class="modal-head">
+                        <div class="modal-title">PAYLAŞ, ÖDÜLLERİ KAP!</div>
+                        <div class="modal-close" onclick="closeModal()">
+                            <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
                         </div>
+                    </div>
+                    <div class="modal-content">
+                        <p class="modal-form-text">PAYLAŞIMIN İÇİN TEŞEKKÜRLER. İŞTE BİZDEN SANA BİRKAÇ HEDİYE!</p>
+                        <div class="modal-form">
+                            <div class="modal-form__item">
+                                <span class="modal-form__item-label">REDEMPTION CODE</span>
+                                <input class="modal-form__item-input" value="112" />
+                            </div>
 
-                        <div class="modal-form__item">
-                            <span class="modal-form__item-label">REDEMPTION URL</span>
-                            <a href="http://www.pubgmobile.com/redeem" class="modal-form__item-input text-primary">http://www.pubgmobile.com/redeem</a>
+                            <div class="modal-form__item">
+                                <span class="modal-form__item-label">REDEMPTION URL</span>
+                                <a href="http://www.pubgmobile.com/redeem" class="modal-form__item-input text-primary">http://www.pubgmobile.com/redeem</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-shapes">
-                    <div class="modal-shapes__right">
-                        <div class="modal-shapes__right-line"></div>
+                    <div class="modal-shapes">
+                        <div class="modal-shapes__right">
+                            <div class="modal-shapes__right-line"></div>
+                        </div>
+                        <div class="modal-shapes__left">
+                            <div class="modal-shapes__left-line"></div>
+                        </div>
+                        <div class="modal-shapes__bottom"></div>
                     </div>
-                    <div class="modal-shapes__left">
-                        <div class="modal-shapes__left-line"></div>
-                    </div>
-                    <div class="modal-shapes__bottom"></div>
                 </div>
             </div>
 
             <div class="modal jsModalElement" id="upload">
-                <div class="modal-head">
-                    <div class="modal-title">ÖDÜLLERİ KAP!</div>
-                    <div class="modal-close" onclick="closeModal()">
-                        <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
+                <div class="modal-inner">
+                    <div class="modal-head">
+                        <div class="modal-title">ÖDÜLLERİ KAP!</div>
+                        <div class="modal-close" onclick="closeModal()">
+                            <img src="./assets/icons/icon-close.svg" alt="" class="modal-close-icon">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-content">
-                    <iframe id="JotFormIFrame-222976909285977" title="[Imported Form] PUBG Mobile &quot;112&quot; İçerik Yarışması" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222976909285977"
-                        frameborder="0" style=" max-width: 100%; width: 100%; height:539px; border:none;" scrolling="no"> </iframe>
-                    <script type="text/javascript">
-                        var ifr = document.getElementById("JotFormIFrame-222976909285977");
-                        if (ifr) {
-                            var src = ifr.src;
-                            var iframeParams = [];
-                            if (window.location.href && window.location.href.indexOf("?") > -1) {
-                                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                    <div class="modal-content">
+                        <iframe id="JotFormIFrame-222976909285977" title="[Imported Form] PUBG Mobile &quot;112&quot; İçerik Yarışması" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/222976909285977"
+                            frameborder="0" style=" max-width: 100%; width: 100%; height:539px; border:none;" scrolling="no"> </iframe>
+                        <script type="text/javascript">
+                            var ifr = document.getElementById("JotFormIFrame-222976909285977");
+                            if (ifr) {
+                                var src = ifr.src;
+                                var iframeParams = [];
+                                if (window.location.href && window.location.href.indexOf("?") > -1) {
+                                    iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                                }
+                                if (src && src.indexOf("?") > -1) {
+                                    iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                                    src = src.substr(0, src.indexOf("?"))
+                                }
+                                iframeParams.push("isIframeEmbed=1");
+                                ifr.src = src + "?" + iframeParams.join('&');
                             }
-                            if (src && src.indexOf("?") > -1) {
-                                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                                src = src.substr(0, src.indexOf("?"))
-                            }
-                            iframeParams.push("isIframeEmbed=1");
-                            ifr.src = src + "?" + iframeParams.join('&');
-                        }
-                        window.handleIFrameMessage = function(e) {
-                            if (typeof e.data === 'object') {
-                                return;
-                            }
-                            var args = e.data.split(":");
-                            if (args.length > 2) {
-                                iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
-                            } else {
-                                iframe = document.getElementById("JotFormIFrame");
-                            }
-                            if (!iframe) {
-                                return;
-                            }
-                            switch (args[0]) {
-                                case "scrollIntoView":
-                                    iframe.scrollIntoView();
-                                    break;
-                                case "setHeight":
-                                    iframe.style.height = args[1] + "px";
-                                    break;
-                                case "collapseErrorPage":
-                                    if (iframe.clientHeight > window.innerHeight) {
-                                        iframe.style.height = window.innerHeight + "px";
-                                    }
-                                    break;
-                                case "reloadPage":
-                                    window.location.reload();
-                                    break;
-                                case "loadScript":
-                                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                            window.handleIFrameMessage = function(e) {
+                                if (typeof e.data === 'object') {
+                                    return;
+                                }
+                                var args = e.data.split(":");
+                                if (args.length > 2) {
+                                    iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]);
+                                } else {
+                                    iframe = document.getElementById("JotFormIFrame");
+                                }
+                                if (!iframe) {
+                                    return;
+                                }
+                                switch (args[0]) {
+                                    case "scrollIntoView":
+                                        iframe.scrollIntoView();
                                         break;
-                                    }
-                                    var src = args[1];
-                                    if (args.length > 3) {
-                                        src = args[1] + ':' + args[2];
-                                    }
-                                    var script = document.createElement('script');
-                                    script.src = src;
-                                    script.type = 'text/javascript';
-                                    document.body.appendChild(script);
-                                    break;
-                                case "exitFullscreen":
-                                    if (window.document.exitFullscreen) window.document.exitFullscreen();
-                                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                                    break;
+                                    case "setHeight":
+                                        iframe.style.height = args[1] + "px";
+                                        break;
+                                    case "collapseErrorPage":
+                                        if (iframe.clientHeight > window.innerHeight) {
+                                            iframe.style.height = window.innerHeight + "px";
+                                        }
+                                        break;
+                                    case "reloadPage":
+                                        window.location.reload();
+                                        break;
+                                    case "loadScript":
+                                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) {
+                                            break;
+                                        }
+                                        var src = args[1];
+                                        if (args.length > 3) {
+                                            src = args[1] + ':' + args[2];
+                                        }
+                                        var script = document.createElement('script');
+                                        script.src = src;
+                                        script.type = 'text/javascript';
+                                        document.body.appendChild(script);
+                                        break;
+                                    case "exitFullscreen":
+                                        if (window.document.exitFullscreen) window.document.exitFullscreen();
+                                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+                                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+                                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+                                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+                                        break;
+                                }
+                                var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+                                if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                                    var urls = {
+                                        "docurl": encodeURIComponent(document.URL),
+                                        "referrer": encodeURIComponent(document.referrer)
+                                    };
+                                    iframe.contentWindow.postMessage(JSON.stringify({
+                                        "type": "urls",
+                                        "value": urls
+                                    }), "*");
+                                }
+                            };
+                            window.isPermitted = function(originUrl, whitelisted_domains) {
+                                var url = document.createElement('a');
+                                url.href = originUrl;
+                                var hostname = url.hostname;
+                                var result = false;
+                                if (typeof hostname !== 'undefined') {
+                                    whitelisted_domains.forEach(function(element) {
+                                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
+                                            result = true;
+                                        }
+                                    });
+                                    return result;
+                                }
+                            };
+                            if (window.addEventListener) {
+                                window.addEventListener("message", handleIFrameMessage, false);
+                            } else if (window.attachEvent) {
+                                window.attachEvent("onmessage", handleIFrameMessage);
                             }
-                            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                                var urls = {
-                                    "docurl": encodeURIComponent(document.URL),
-                                    "referrer": encodeURIComponent(document.referrer)
-                                };
-                                iframe.contentWindow.postMessage(JSON.stringify({
-                                    "type": "urls",
-                                    "value": urls
-                                }), "*");
-                            }
-                        };
-                        window.isPermitted = function(originUrl, whitelisted_domains) {
-                            var url = document.createElement('a');
-                            url.href = originUrl;
-                            var hostname = url.hostname;
-                            var result = false;
-                            if (typeof hostname !== 'undefined') {
-                                whitelisted_domains.forEach(function(element) {
-                                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                                        result = true;
-                                    }
-                                });
-                                return result;
-                            }
-                        };
-                        if (window.addEventListener) {
-                            window.addEventListener("message", handleIFrameMessage, false);
-                        } else if (window.attachEvent) {
-                            window.attachEvent("onmessage", handleIFrameMessage);
-                        }
-                    </script>
-                </div>
-                <div class="modal-shapes">
-                    <div class="modal-shapes__right">
-                        <div class="modal-shapes__right-line"></div>
+                        </script>
                     </div>
-                    <div class="modal-shapes__left">
-                        <div class="modal-shapes__left-line"></div>
+                    <div class="modal-shapes">
+                        <div class="modal-shapes__right">
+                            <div class="modal-shapes__right-line"></div>
+                        </div>
+                        <div class="modal-shapes__left">
+                            <div class="modal-shapes__left-line"></div>
+                        </div>
+                        <div class="modal-shapes__bottom"></div>
                     </div>
-                    <div class="modal-shapes__bottom"></div>
                 </div>
             </div>
         </div>

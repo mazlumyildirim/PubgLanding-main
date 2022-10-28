@@ -1431,6 +1431,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   max-width: calc(100% - 60px);
+  max-height: calc(100% - 60px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -1439,9 +1440,10 @@ button.swiper-pagination-bullet {
   border-radius: 3px;
   transition: all 0.3s;
   display: none;
+  flex-direction: column;
 }
 .modal.active {
-  display: block;
+  display: flex;
 }
 @media (min-width: 1024px) {
   .modal {
@@ -1572,13 +1574,18 @@ button.swiper-pagination-bullet {
   }
 }
 
+.modal-inner {
+  display: contents;
+  max-height: 400px;
+}
+
 .modal-content {
   position: relative;
   padding: 15px 20px;
-  max-height: 360px;
   box-shadow: inset 3px 4px 33px #7c3379;
   background-color: #83387F;
   overflow-y: scroll;
+  max-height: 360px;
   z-index: 1;
 }
 .modal-content:before {
@@ -1597,21 +1604,14 @@ button.swiper-pagination-bullet {
     display: inline;
   }
 }
-@media screen and (min-width: 370px) {
-  .modal-content {
-    max-height: 400px;
-  }
-}
 @media (min-width: 1024px) {
   .modal-content {
     padding: 20px;
-    height: 380px;
   }
 }
 @media (min-width: 1365px) {
   .modal-content {
     padding: 20px;
-    height: 450px;
   }
 }
 
