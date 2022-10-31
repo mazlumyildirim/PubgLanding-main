@@ -528,9 +528,23 @@ body {
         width: calc(100% + 40px);
         margin-left: -20px;
         z-index: 1;
+        height: 250px;
+        @media screen and (min-width: 480px) {
+            height: 350px;
+        }
+        @include bp(phone-large) {
+            height: 400px;
+        }
         @include bp(tablet) {
             width: calc(100% + 80px);
             margin-left: -40px;
+            height: 450px;
+        }
+        @include bp(desktop) {
+            height: 520px;
+        }
+        @include bp(desktop-up) {
+            height: 630px;
         }
         img {
             width: 100%;

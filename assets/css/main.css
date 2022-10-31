@@ -2585,11 +2585,33 @@ body {
   width: calc(100% + 40px);
   margin-left: -20px;
   z-index: 1;
+  height: 250px;
+}
+@media screen and (min-width: 480px) {
+  .theme-song__media {
+    height: 350px;
+  }
+}
+@media (min-width: 640px) {
+  .theme-song__media {
+    height: 400px;
+  }
 }
 @media (min-width: 820px) {
   .theme-song__media {
     width: calc(100% + 80px);
     margin-left: -40px;
+    height: 450px;
+  }
+}
+@media (min-width: 1024px) {
+  .theme-song__media {
+    height: 520px;
+  }
+}
+@media (min-width: 1365px) {
+  .theme-song__media {
+    height: 630px;
   }
 }
 .theme-song__media img {
