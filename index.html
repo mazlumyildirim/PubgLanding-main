@@ -25,7 +25,6 @@
         // CHANGE ID
         gtag('config', 'UA-xxxx');
     </script>
-    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
@@ -85,28 +84,27 @@
                             <div class="tab-section__elements js-no-unmute">
                                 <div class="tab-section__item active js-tab-content" id="tab-0">
                                     <iframe
-                                        src="https://drive.google.com/file/d/16x20N8ASRtig3yBjDvZLUA5Fz7QKHLZA/preview"
+                                        src="https://www.youtube.com/embed/u31qwQUeGuM?enablejsapi=1"
                                         class="tab-section__item-video"
                                         id="js-tab-section-video"
                                         style="width: 100%; height: 100%;"
-                                        allow="autoplay"
                                     ></iframe>
                                 </div>
                             </div>
                             <div class="tab-section__tabs">
-                                <div class="tab-section__tab js-tab-video active" data-frame-src="https://drive.google.com/file/d/16x20N8ASRtig3yBjDvZLUA5Fz7QKHLZA/preview">
+                                <div class="tab-section__tab js-tab-video active" data-frame-src="https://www.youtube.com/embed/u31qwQUeGuM">
                                     <span class="tab-number">01</span>
                                     <span class="tab-name">
                                         PUBG MOBILE X GALATA KULESİ
                                     </span>
                                 </div>
-                                <div class="tab-section__tab js-tab-video" data-frame-src="https://drive.google.com/file/d/1LTAWMQ4zbZmw5ipDNdIPwCu-SpvGt0kE/preview">
+                                <div class="tab-section__tab js-tab-video" data-frame-src="https://www.youtube.com/embed/z-q9VlNgRFM">
                                     <span class="tab-number">02</span>
                                     <span class="tab-name">
                                         OYUN İÇİNDEN GALATA KULESİ 1
                                     </span>
                                 </div>
-                                <div class="tab-section__tab js-tab-video" data-frame-src="https://drive.google.com/file/d/1pGC9fkOXxKQBl1iSe1AZE0_1tVoQo9vd/preview">
+                                <div class="tab-section__tab js-tab-video" data-frame-src="https://www.youtube.com/embed/pVE92TNDwUk">
                                     <span class="tab-number">03</span>
                                     <span class="tab-name">
                                         OYUN İÇİNDEN GALATA KULESİ 2
@@ -178,8 +176,12 @@
                     </div>
                     <div class="theme-song-content">
                         <div class="theme-song__media">
-                            <iframe src="https://www.youtube.com/embed/VA_fSOBMJbY" class="theme-song__media-video" style="width: 100%; height: 100%;" allow="autoplay">
-                            </iframe>
+                            <iframe
+                                src="https://www.youtube.com/embed/VA_fSOBMJbY"
+                                class="theme-song__media-video"
+                                style="width: 100%; height: 100%;"
+                                allow="autoplay"
+                            ></iframe>
                         </div>
                         <div class="theme-song__share share share-highlight">
                             <div class="share-message">
@@ -732,6 +734,7 @@
     <script>
         const api = 'http://127.0.0.1:3000';
         let isMuted = true;
+        let tabSectionYoutubePlayer;
 
         document.onreadystatechange = function() {
             if (document.readyState !== "complete") {
@@ -888,10 +891,6 @@
         });
 
         $('.js-no-unmute').click((e) => {
-            // if (!isMuted) {
-            muteThemeSong();
-            // }
-
             e.stopPropagation();
         })
 
@@ -921,9 +920,10 @@
         }
 
         $(".js-tab-video").click(function(e) {
+            tabSectionYoutubePlayer.loadVideoByUrl($(this).data('frame-src'));
+
             $('.js-tab-video').removeClass('active');
             $(this).addClass("active");
-            $('#js-tab-section-video').attr('src', $(this).data('frame-src'));
         });
 
         $(".js-muted-overlay").click(function() {
@@ -1041,16 +1041,19 @@
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('js-tab-section-video', {
-            videoId: 'M7lc1UVf-VE',
-            playerVars: {
-                'playsinline': 1
-            },
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
+            tabSectionYoutubePlayer = new YT.Player('js-tab-section-video', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
             });
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                muteThemeSong();
+            } else {
+                unmuteThemeSong();
+            }
         }
     </script>
 </body>
