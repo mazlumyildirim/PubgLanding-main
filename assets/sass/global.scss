@@ -1,5 +1,6 @@
 @import "./helpers.scss";
 @import "./variables.scss";
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,6 +12,7 @@ body {
     overflow-x: hidden !important;
     background: $cBackground70;
     color: $cNeutral00;
+
     @include bp(phone-large) {
         background: $cBackground60;
     }
@@ -19,13 +21,16 @@ body {
 .custom-container {
     max-width: calc(100% - 40px);
     margin-inline: auto;
+
     @media screen and (min-width: 820px) {
         max-width: 700px;
         width: 100%;
     }
+
     @media screen and (min-width: 1024px) {
         max-width: 900px;
     }
+
     @media screen and (min-width: 1366px) {
         max-width: 1120px;
     }
@@ -35,15 +40,18 @@ body {
     position: relative;
     background-color: $cBackground70;
     padding-bottom: 40px;
+
     @include bp(phone-large) {
         padding-inline: 20px;
         margin-top: -120px;
         padding-bottom: 80px;
     }
+
     @include bp(tablet) {
         padding-inline: 40px;
         padding-bottom: 100px;
     }
+
     @include bp(desktop) {
         margin-top: -260px;
     }
@@ -57,6 +65,7 @@ body {
     width: 100%;
     z-index: -1;
     pointer-events: none;
+
     @include bp(tablet) {
         display: block;
     }
@@ -104,6 +113,7 @@ body {
 
 .swiper-wrapper {
     padding-bottom: 10px;
+
     @include bp(desktop) {
         padding-bottom: 20px;
     }
@@ -137,23 +147,29 @@ body {
 
 .share-message {
     margin-right: 10px;
+
     @include bp(tablet) {
         margin-right: 20px;
     }
+
     &__icon {
         width: 20px;
         height: 20px;
     }
+
     &__text {
         font-size: 14px;
         display: block;
         font-family: "League Gothic";
         text-align: right;
+
         @include bp(phone-large) {
             font-size: 26px;
         }
+
         .br {
             display: block;
+
             @include bp(phone-large) {
                 display: inline;
             }
@@ -171,24 +187,29 @@ body {
     margin-inline: 6px;
     cursor: pointer;
     transition: all .3s;
+
     &:hover {
         color: $cPrimary;
     }
+
     &__icon {
         display: block;
         margin-inline: auto;
         width: 12px;
         height: 12px;
         object-fit: contain;
+
         @include bp(phone-large) {
             width: 20px;
             height: 20px;
             margin-bottom: 4px;
         }
     }
+
     &__text {
         font-family: "AgencyFB";
         font-size: 12px;
+
         @include bp(phone-large) {
             font-size: 20px;
         }
@@ -204,29 +225,36 @@ body {
     transform: translate(-50%, -12px);
     border-radius: 4px;
     z-index: 2;
+
     .share-item {
         background-color: $cBackground70;
         margin-inline: 0;
         padding: 8px;
+
         @include bp(phone-large) {
             padding: 10px 12px;
         }
+
         &__text {
             @include bp(phone-large) {
                 letter-spacing: 0.8px;
             }
         }
     }
+
     .share-message {
         display: flex;
         align-items: center;
         margin-right: 50px;
+
         @include bp(desktop) {
             margin-right: 100px;
         }
+
         &__icon {
             margin-right: 10px;
         }
+
         &__text {
             font-size: 14px;
             width: auto;
@@ -234,9 +262,11 @@ body {
             color: $cBackground100;
             font-family: "League Gothic";
             font-style: normal;
+
             @include bp(phone-large) {
                 font-size: 24px;
             }
+
             @include bp(tablet) {
                 font-size: 36px;
                 margin-bottom: -6px;
@@ -259,12 +289,15 @@ body {
     color: $cPrimary;
     padding-top: 36px;
     margin-bottom: 4px;
+
     @include bp(phone-large) {
         font-size: 36px;
     }
+
     @include bp(tablet) {
         padding-top: 60px;
     }
+
     @include bp(tablet) {
         font-size: 64px;
     }
@@ -278,6 +311,7 @@ body {
     display: block;
     color: $cNeutral00;
     margin-bottom: 20px;
+
     @include bp(phone-large) {
         font-size: 26px;
     }
@@ -303,12 +337,15 @@ body {
     color: $cBackground70;
     text-shadow: 0px 0px 1px $cPrimary;
     opacity: 0.2;
+
     @include bp(phone-large) {
         font-size: 4.2em;
     }
+
     @include bp(tablet) {
         font-size: 4.8em;
     }
+
     @include bp(desktop) {
         font-size: 9em;
         bottom: -55px;
@@ -321,26 +358,32 @@ body {
     position: relative;
     width: 280px;
     height: 170px;
+
     @media screen and (min-width: 380px) {
         width: 350px;
         height: 220px;
     }
+
     @include bp(phone-large) {
         width: 550px;
         height: 320px;
     }
+
     @include bp(tablet) {
         width: 640px;
         height: 360px;
     }
+
     @include bp(desktop) {
         width: 720px;
         height: 420px;
     }
+
     @include bp(desktop-up) {
         width: 940px;
         height: 540px;
     }
+
     &__video {
         position: relative;
         z-index: 0;
@@ -354,10 +397,12 @@ body {
     right: -40px;
     top: 15px;
     z-index: 2;
+
     @include bp(tablet) {
         width: 80px;
         right: -60px;
     }
+
     @include bp(desktop-up) {
         width: 134px;
         right: -90px;
@@ -371,11 +416,13 @@ body {
     left: -40px;
     bottom: -15px;
     z-index: 0;
+
     @include bp(tablet) {
         width: 120px;
         left: -60px;
         bottom: -20px;
     }
+
     @include bp(desktop-up) {
         width: 240px;
         left: -100px;
@@ -395,22 +442,28 @@ body {
     outline: none;
     border-radius: 3px;
     transition: all .3s;
+
     &:disabled {
         background-color: #cccccc;
+
         .button-text {
             color: #818181;
         }
     }
+
     @include bp(phone-large) {
         display: inline-flex;
         align-items: center;
     }
+
     &.national-day {
         transform: rotate(-1.09deg);
     }
+
     &.like {
         transform: rotate(2.13deg) translateY(8px);
     }
+
     &:hover {
         transform: rotate(0);
     }
@@ -420,6 +473,7 @@ body {
     width: 14px;
     height: 14px;
     object-fit: contain;
+
     @include bp(phone-large) {
         width: 20px;
         height: 20px;
@@ -431,6 +485,7 @@ body {
     font-family: "League Gothic";
     font-size: 16px;
     text-transform: uppercase;
+
     @include bp(phone-large) {
         font-size: 30px;
         margin-right: 8px;
@@ -442,6 +497,7 @@ body {
     font-size: 14px;
     padding-inline: 4px;
     border-left: 1px solid rgba($cBackground100, 0.15);
+
     @include bp(phone-large) {
         font-size: 22px;
         padding-left: 8px;
@@ -450,6 +506,7 @@ body {
 
 .theme-songs {
     position: relative;
+
     @include bp(desktop) {
         width: calc(100% - 100px);
         margin-left: 50px;
@@ -461,10 +518,12 @@ body {
         position: relative;
         z-index: 0;
     }
+
     &__content {
         z-index: 1;
         position: relative;
     }
+
     &__title {
         position: relative;
         font-size: 24px;
@@ -476,18 +535,22 @@ body {
         padding-top: 46px;
         margin-bottom: 4px;
         z-index: 1;
+
         @include bp(phone-large) {
             font-size: 36px;
             padding-top: 80px;
         }
+
         @include bp(desktop) {
             font-size: 48px;
             padding-top: 140px;
         }
+
         @include bp(desktop-up) {
             font-size: 64px;
         }
     }
+
     &__title-ghost {
         position: absolute;
         font-size: 40px;
@@ -500,39 +563,48 @@ body {
         color: #19191a;
         text-shadow: 0px 0px 1px #ffbe21;
         opacity: 0.2;
+
         @include bp(phone-large) {
             font-size: 5.5em;
             bottom: -30px;
             opacity: 0.15;
         }
+
         @include bp(desktop) {
             font-size: 6.4em;
             bottom: -20px;
         }
     }
+
     &__media {
         position: relative;
         width: calc(100% + 40px);
         margin-left: -20px;
         z-index: 1;
         height: 250px;
+
         @media screen and (min-width: 480px) {
             height: 350px;
         }
+
         @include bp(phone-large) {
             height: 400px;
         }
+
         @include bp(tablet) {
             width: calc(100% + 80px);
             margin-left: -40px;
             height: 450px;
         }
+
         @include bp(desktop) {
             height: 520px;
         }
+
         @include bp(desktop-up) {
             height: 630px;
         }
+
         img {
             width: 100%;
         }
@@ -544,6 +616,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     @include bp(phone-large) {
         flex-direction: inherit;
     }
@@ -551,9 +624,11 @@ body {
 
 .theme-song-list-section {
     margin-top: 38px;
+
     @include bp(tablet) {
         margin-top: 80px;
     }
+
     @include bp(desktop) {
         margin-top: 100px;
     }
@@ -563,33 +638,39 @@ body {
     &__head {
         margin-bottom: 15px;
     }
+
     &__title {
         font-family: "League Gothic";
         font-size: 24px;
         text-transform: uppercase;
         color: $cPrimary;
         margin-bottom: 8px;
+
         @include bp(phone-large) {
             font-size: 28px;
             margin-bottom: 0;
             text-align: left;
         }
+
         @include bp(desktop) {
             font-size: 42px;
         }
     }
+
     &__subtitle {
         font-family: "League Gothic";
         font-size: 14px;
         max-width: 160px;
         text-transform: uppercase;
         color: $cNeutral00;
+
         @include bp(phone-large) {
             font-size: 20px;
             text-align: left;
             max-width: 180px;
             margin-left: 12px;
         }
+
         @include bp(desktop) {
             font-size: 26px;
             max-width: 190px;
@@ -602,6 +683,7 @@ body {
     border-radius: 3px;
     overflow: hidden;
     cursor: pointer;
+
     img {
         width: 100%;
         object-fit: contain;
@@ -618,6 +700,7 @@ body {
     width: calc(100% + 100px);
     transform: translateY(-50%);
     user-select: none;
+
     @include bp(desktop) {
         display: flex;
     }
@@ -632,6 +715,7 @@ body {
     border-radius: 4px;
     background-color: $cBackground10;
     cursor: pointer;
+
     &__icon {
         width: 24px;
         height: 24px;
@@ -641,9 +725,11 @@ body {
 
 .upload-block {
     margin-top: 38px;
+
     @include bp(tablet) {
         margin-top: 60px;
     }
+
     @include bp(desktop) {
         margin-top: 120px;
     }
@@ -653,6 +739,7 @@ body {
     &__head {
         margin-bottom: 12px;
     }
+
     &__title {
         font-size: 24px;
         max-width: 160px;
@@ -660,10 +747,12 @@ body {
         color: $cPrimary;
         font-family: "League Gothic";
         font-style: normal;
+
         @include bp(phone-large) {
             font-size: 36px;
             max-width: 190px;
         }
+
         @include bp(tablet) {
             font-size: 42px;
             max-width: 220px;
@@ -677,6 +766,7 @@ body {
     margin-top: -25px;
     background: linear-gradient(112deg, #505050 6%, #1e1e1e 96%);
     z-index: 0;
+
     &:before {
         content: "";
         position: absolute;
@@ -690,14 +780,17 @@ body {
         z-index: 0;
         user-select: none;
         pointer-events: none;
+
         @include bp(desktop) {
             display: none;
         }
     }
+
     @include bp(desktop) {
         width: calc(100% - 300px);
         margin-top: 0;
     }
+
     @media screen and (min-width: 1366px) {
         width: calc(100% - 360px);
     }
@@ -708,19 +801,23 @@ body {
     flex-direction: column;
     height: 100%;
     padding-inline: 24px;
+
     @include bp(phone-large) {
         padding-left: 24px;
         padding-right: 36px;
     }
+
     @include bp(tablet) {
         padding-left: 50px;
         padding-right: 65px;
     }
+
     @include bp(desktop) {
         width: 380px;
         padding-left: 40px;
         padding-right: 0px;
     }
+
     @media screen and (min-width: 1366px) {
         width: 520px;
     }
@@ -731,9 +828,11 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+
     @include bp(desktop) {
         flex-direction: row;
     }
+
     &:before {
         display: none;
         content: "";
@@ -748,33 +847,42 @@ body {
         z-index: 2;
         user-select: none;
         pointer-events: none;
+
         @include bp(desktop) {
             display: block;
         }
     }
+
     &__image {
         width: 100%;
         object-fit: contain;
         z-index: 1;
+
         &.desktop {
             display: none;
+
             @include bp(desktop) {
                 display: block;
             }
         }
+
         &.mobile {
             display: block;
+
             @include bp(desktop) {
                 display: none;
             }
         }
+
         @include bp(desktop) {
             width: 300px;
         }
+
         @media screen and (min-width: 1366px) {
             width: 360px;
         }
     }
+
     &__rule {
         font-size: 12px;
         margin-bottom: 6px;
@@ -782,24 +890,29 @@ body {
         font-style: normal;
         list-style-type: square;
         margin-left: 12px;
+
         @include bp(phone-large) {
             font-size: 21px;
             margin-bottom: 10px;
         }
+
         @include bp(desktop-up) {
             font-size: 24px;
             margin-bottom: 16px;
         }
     }
+
     &__rule-message {
         font-size: 14px;
         margin-bottom: 12px;
         font-family: "AgencyFB";
         font-style: normal;
         line-height: 1.3;
+
         @include bp(phone-large) {
             font-size: 16px;
         }
+
         @media screen and (min-width: 1366px) {
             font-size: 21px;
         }
@@ -813,23 +926,29 @@ body {
     width: 100%;
     padding-top: 40px;
     margin-bottom: 20px;
+
     @media screen and (min-width: 370px) {
         width: calc(100% - 60px);
         margin-left: 30px;
     }
+
     @include bp(tablet) {
         padding-top: 50px;
     }
+
     @include bp(desktop) {
         padding-top: 50px;
         margin-bottom: 32px;
     }
+
     &__element {
         align-items: center;
+
         @include bp(phone-large) {
             display: block;
         }
     }
+
     &__icon {
         display: block;
         margin-inline: auto;
@@ -837,14 +956,17 @@ body {
         height: 21px;
         object-fit: contain;
         margin-bottom: 8px;
+
         @include bp(desktop-up) {
             width: 32px;
             height: 32px;
         }
     }
+
     &__text {
         font-family: "AgencyFB";
         font-size: 14px;
+
         @include bp(desktop-up) {
             font-size: 22px;
         }
@@ -864,14 +986,17 @@ body {
     font-family: "AgencyFB";
     text-transform: uppercase;
     z-index: 2;
+
     @include bp(phone-large) {
         font-size: 18px;
         padding: 12px 16px;
     }
+
     @include bp(desktop) {
         font-size: 24px;
         padding: 20px 16px;
     }
+
     @include bp(desktop-up) {
         font-size: 32px;
         padding: 24px 16px;
@@ -901,12 +1026,15 @@ body {
     margin-bottom: 4px;
     font-family: "League Gothic";
     font-style: normal;
+
     @include bp(phone-large) {
         font-size: 42px;
     }
+
     @include bp(tablet) {
         padding-top: 60px;
     }
+
     @include bp(desktop) {
         padding-top: 90px;
     }
@@ -918,51 +1046,63 @@ body {
     cursor: pointer;
     pointer-events: none;
     transition: all 0.3s;
+
     &.scale {
         img {
             position: fixed;
         }
     }
+
     &__description {
         font-family: "AgencyFB";
         font-size: 12px;
         margin-top: 8px;
         transition: opacity 0.2s;
+
         @include bp(tablet) {
             font-size: 16px;
         }
+
         @include bp(desktop) {
             font-size: 18px;
         }
+
         @media screen and (min-width: 1366px) {
             font-size: 20px;
         }
     }
+
     &__image {
         width: 100%;
         height: auto;
         object-fit: contain;
         border-radius: 5px;
         filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.6));
+
         @include bp(phone-large) {
             border-radius: 8px;
         }
+
         @include bp(tablet) {
             border-radius: 16px;
         }
     }
+
     &.swiper-slide-active {
         filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.6));
     }
+
     &.swiper-slide-prev,
     &.swiper-slide-next,
     &.swiper-slide-active {
         opacity: 1;
         pointer-events: auto;
     }
+
     &.swiper-slide-prev,
     &.swiper-slide-next {
         opacity: 0.2;
+
         .activity-element__description {
             opacity: 0;
         }
@@ -985,10 +1125,12 @@ body {
 .activity-slider-button-next,
 .activity-slider-button-prev {
     cursor: pointer;
+
     @include bp(phone-large) {
         width: 26px;
         height: 26px;
     }
+
     img {
         width: 100%;
         height: 100%;
@@ -999,12 +1141,15 @@ body {
 .view-content {
     display: flex;
     margin-top: 30px;
+
     @include bp(phone-large) {
         margin-top: 60px;
     }
+
     @include bp(tablet) {
         margin-top: 90px;
     }
+
     @include bp(desktop) {
         margin-top: 150px;
     }
@@ -1015,9 +1160,11 @@ body {
     object-fit: contain;
     border-radius: 3px;
     filter: drop-shadow(0px 8px 32px rgba(0, 0, 0, 0.6));
+
     @include bp(phone-large) {
         border-radius: 8px;
     }
+
     @include bp(tablet) {
         border-radius: 16px;
     }
@@ -1026,12 +1173,16 @@ body {
 .view-text {
     width: 50%;
     padding-left: 18px;
+
     @include bp(phone-large) {
         padding-left: 38px;
-        width: 200px;
+        max-width: 280px;
+        width: 100%;
     }
+
     @include bp(tablet) {
-        width: 220px;
+        max-width: 320px;
+        width: 100%;
     }
 }
 
@@ -1042,6 +1193,7 @@ body {
     margin-bottom: 8px;
     font-family: "League Gothic";
     font-style: normal;
+
     @include bp(phone-large) {
         font-size: 38px;
     }
@@ -1049,13 +1201,16 @@ body {
 
 .view-description {
     font-family: "AgencyFB";
-    font-size: 12px;
+    font-size: 16px;
+
     @include bp(tablet) {
         font-size: 18px;
     }
+
     @include bp(desktop) {
         font-size: 20px;
     }
+
     @media screen and (min-width: 1366px) {
         font-size: 22px;
     }
@@ -1072,6 +1227,7 @@ body {
     left: 0;
     background: #020101;
     z-index: 22;
+
     &__image {
         max-width: 357px;
         max-height: 501px;
@@ -1097,19 +1253,24 @@ body {
     transition: all .3s;
     cursor: pointer;
     z-index: 10;
+
     &:hover {
         transform: scale(1.1);
     }
+
     .volume-open {
         display: none;
     }
+
     .volume-off {
         display: inline-block;
     }
+
     &.paused {
         .volume-open {
             display: inline-block;
         }
+
         .volume-off {
             display: none;
         }
